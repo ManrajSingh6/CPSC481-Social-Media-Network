@@ -1,7 +1,7 @@
 import '../assets/styles.css'
 import { useNavigate } from 'react-router-dom'
 
-function ForgotPassword() {
+function ForgotPasswordPage() {
   const navigate = useNavigate()
   const handleLogin = () => {
     navigate('/login')
@@ -45,4 +45,4 @@ function ForgotPassword() {
   )
 }
 
-export default ForgotPassword
+export default ForgotPasswordPage

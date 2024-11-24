@@ -2,7 +2,7 @@ import '../assets/styles.css'
 import { useNavigate } from 'react-router-dom'
 import { LOGIN_ROUTE } from '../utils/routes'
 
-function Register() {
+function RegisterPage() {
   const navigate = useNavigate()
 
   const handleLogin = () => {
@@ -56,4 +56,4 @@ function Register() {
   )
 }
 
-export default Register
+export default RegisterPage

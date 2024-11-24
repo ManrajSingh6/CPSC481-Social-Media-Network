@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { REGISTER_ROUTE } from '../utils/routes'
 
-function Login() {
+function LoginPage() {
   const navigate = useNavigate()
   const handleRegister = () => {
     navigate(REGISTER_ROUTE)
@@ -53,7 +53,7 @@ function Login() {
   )
 }
 
-export default Login
+export default LoginPage
 
 const styles = {
   lineWithText: {
