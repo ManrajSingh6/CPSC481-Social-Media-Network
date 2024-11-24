@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { useUser } from '../../context/userContext'
 import { Event } from '../../utils/types'
 import { Button } from '../button'
