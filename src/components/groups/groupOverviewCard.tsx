@@ -13,7 +13,7 @@ export function GroupOverviewCard({
   group
 }: GroupOverviewCardProps): JSX.Element {
   return (
-    <div className='cursor-pointer rounded-lg border bg-white p-2 transition-all hover:border-slate-500'>
+    <div className='cursor-pointer rounded-lg border bg-white p-2 transition-all'>
       <div className='flex items-center justify-between'>
         <Heading headingText={group.name} headingSize='medium' />
         <CustomImage

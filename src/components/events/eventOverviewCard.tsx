@@ -11,7 +11,7 @@ export function EventOverviewCard({
   event
 }: EventOverviewCardProps): JSX.Element {
   return (
-    <div className='rounded-lg border border-blue-400 bg-white p-2 transition-all hover:border-blue-800'>
+    <div className='rounded-lg border border-blue-400 bg-white p-2 transition-all'>
       <div className='mb-2 flex cursor-pointer items-center justify-between'>
         <Heading headingText={event.name} headingSize='medium' />
         <CustomImage
