@@ -19,31 +19,34 @@ import { EventsPage } from './pages/EventsPage.tsx'
 import { GroupsPage } from './pages/GroupsPage.tsx'
 import { Layout } from './pages/Layout.tsx'
 import { UserProvider } from './context/userContext.tsx'
+import { PhoneSilhouetteWrapper } from './pages/PhoneSilhoutteWrapper.tsx'
 
 function App() {
   return (
-    <UserProvider>
-      <Router>
-        <Routes>
-          <Route path='/' element={<Navigate to={LOGIN_ROUTE} />} />
-          <Route path={LOGIN_ROUTE} element={<LoginPage />} />
-          <Route path={REGISTER_ROUTE} element={<RegisterPage />} />
-          <Route path={FORGOT_ROUTE} element={<ForgotPasswordPage />} />
-          <Route element={<ProtectedRoute />}>
-            <Route path='/' element={<Layout />}>
-              <Route path={GROUPS_ROUTE} element={<GroupsPage />} />
-              <Route path={EVENTS_ROUTE} element={<EventsPage />} />
-              <Route path={MESSAGES_ROUTE} element={<p>Messages Page</p>} />
-              <Route path={SETTINGS_ROUTE} element={<p>Settings Page</p>} />
-              <Route
-                path={NOTIFICATIONS_ROUTE}
-                element={<p>Notifications Page</p>}
-              />
+    <PhoneSilhouetteWrapper>
+      <UserProvider>
+        <Router>
+          <Routes>
+            <Route path='/' element={<Navigate to={LOGIN_ROUTE} />} />
+            <Route path={LOGIN_ROUTE} element={<LoginPage />} />
+            <Route path={REGISTER_ROUTE} element={<RegisterPage />} />
+            <Route path={FORGOT_ROUTE} element={<ForgotPasswordPage />} />
+            <Route element={<ProtectedRoute />}>
+              <Route path='/' element={<Layout />}>
+                <Route path={GROUPS_ROUTE} element={<GroupsPage />} />
+                <Route path={EVENTS_ROUTE} element={<EventsPage />} />
+                <Route path={MESSAGES_ROUTE} element={<p>Messages Page</p>} />
+                <Route path={SETTINGS_ROUTE} element={<p>Settings Page</p>} />
+                <Route
+                  path={NOTIFICATIONS_ROUTE}
+                  element={<p>Notifications Page</p>}
+                />
+              </Route>
             </Route>
-          </Route>
-        </Routes>
-      </Router>
-    </UserProvider>
+          </Routes>
+        </Router>
+      </UserProvider>
+    </PhoneSilhouetteWrapper>
   )
 }
 
