@@ -1,3 +1,4 @@
+import { useUser } from '../../context/userContext'
 import { Event } from '../../utils/types'
 import { Button } from '../button'
 import { CustomImage } from '../customImage'
@@ -10,8 +11,27 @@ interface EventOverviewCardProps {
 export function EventOverviewCard({
   event
 }: EventOverviewCardProps): JSX.Element {
+  const { user, enrollUserInGroupOrEvent, unenrollUserInGroupOrEvent } =
+    useUser()
+
+  // This shouldn't happen, but added for type safety
+  if (!user) {
+    return <></>
+  }
+
+  // TODO: get these working
+  const isUserEnrolledInEvent = user.enrolledEventIds.includes(event.id)
+
+  function handleRSVP(): void {
+    enrollUserInGroupOrEvent(event.id, 'Event')
+  }
+
+  function handleCancelRSVP(): void {
+    unenrollUserInGroupOrEvent(event.id, 'Event')
+  }
+
   return (
-    <div className='rounded-lg border border-blue-400 bg-white p-2 transition-all hover:border-blue-800'>
+    <div className='rounded-lg border border-blue-400 bg-white p-2 transition-all'>
       <div className='mb-2 flex cursor-pointer items-center justify-between'>
         <Heading headingText={event.name} headingSize='medium' />
         <CustomImage
@@ -27,7 +47,14 @@ export function EventOverviewCard({
         <LabelValueItem label='Duration' value={event.duration} />
       </ul>
       <div className='flex justify-end'>
-        <Button text='RSVP' onClick={() => {}} paddingValue='px-4 py-2' />
+        <Button
+          text={isUserEnrolledInEvent ? 'Cancel RSVP' : 'RSVP'}
+          onClick={() =>
+            isUserEnrolledInEvent ? handleCancelRSVP : handleRSVP()
+          }
+          paddingValue='px-4 py-2'
+          variant={isUserEnrolledInEvent ? 'secondary' : 'primary'}
+        />
       </div>
     </div>
   )

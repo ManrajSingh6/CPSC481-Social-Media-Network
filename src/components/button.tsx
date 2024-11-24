@@ -23,7 +23,7 @@ export function Button({
     !customStyle && variant === 'primary'
       ? 'bg-gray-950 text-white hover:bg-gray-900'
       : variant === 'secondary'
-        ? 'text-buttonFilterText border border-buttonFilterText bg-pageBackground shadow-xl transition-colors'
+        ? 'text-gray-950 border border-gray-950 bg-white hover:bg-gray-50'
         : ''
 
   return (

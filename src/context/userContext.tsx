@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from 'react'
-import { User } from '../utils/types'
+import { GroupOrEvent, User } from '../utils/types'
 import { MOCK_USER } from '../utils/mockData'
 
 const LOCAL_STORAGE_USER_KEY = 'logged_in_user'
@@ -7,6 +7,14 @@ const LOCAL_STORAGE_USER_KEY = 'logged_in_user'
 interface UserContextType {
   readonly user: User | null
   readonly login: (username: string, password: string) => boolean
+  readonly enrollUserInGroupOrEvent: (
+    groupOrEventId: number,
+    type: GroupOrEvent
+  ) => void
+  readonly unenrollUserInGroupOrEvent: (
+    groupOrEventId: number,
+    type: GroupOrEvent
+  ) => void
   readonly isUserLoading: boolean
 }
 
@@ -30,6 +38,58 @@ export function UserProvider({ children }: UserProviderProps): JSX.Element {
     return false
   }
 
+  function enrollUserInGroupOrEvent(
+    groupOrEventId: number,
+    type: GroupOrEvent
+  ): void {
+    if (!user) {
+      return
+    }
+
+    if (type === 'Event') {
+      user.enrolledEventIds.push(groupOrEventId)
+      return
+    }
+
+    user.enrolledGroupIds.push(groupOrEventId)
+    return
+  }
+
+  function unenrollUserInGroupOrEvent(
+    groupOrEventId: number,
+    type: GroupOrEvent
+  ): void {
+    if (!user) {
+      return
+    }
+
+    if (type === 'Event') {
+      const newUser: User = {
+        ...user,
+        enrolledEventIds: user.enrolledEventIds.filter(
+          (eventId) => eventId !== groupOrEventId
+        )
+      }
+      setUser(newUser)
+      updateUserInLocalStorage(newUser)
+      return
+    }
+
+    const newUser: User = {
+      ...user,
+      enrolledEventIds: user.enrolledGroupIds.filter(
+        (eventId) => eventId !== groupOrEventId
+      )
+    }
+    setUser(newUser)
+    updateUserInLocalStorage(newUser)
+    return
+  }
+
+  function updateUserInLocalStorage(user: User): void {
+    localStorage.setItem(LOCAL_STORAGE_USER_KEY, JSON.stringify(user))
+  }
+
   useEffect(() => {
     setIsUserLoading(true)
     const existingLoggedInUser = localStorage.getItem(LOCAL_STORAGE_USER_KEY)
@@ -41,7 +101,15 @@ export function UserProvider({ children }: UserProviderProps): JSX.Element {
   }, [])
 
   return (
-    <UserContext.Provider value={{ user, login, isUserLoading }}>
+    <UserContext.Provider
+      value={{
+        user,
+        login,
+        isUserLoading,
+        enrollUserInGroupOrEvent,
+        unenrollUserInGroupOrEvent
+      }}
+    >
       {children}
     </UserContext.Provider>
   )

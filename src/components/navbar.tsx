@@ -1,10 +1,5 @@
-import { CalendarDays, MessageSquare, Settings, Users } from 'lucide-react'
-import {
-  EVENTS_ROUTE,
-  GROUPS_ROUTE,
-  MESSAGES_ROUTE,
-  SETTINGS_ROUTE
-} from '../utils/routes'
+import { Home, MessageSquare, Settings } from 'lucide-react'
+import { DISCOVER_ROUTE, MESSAGES_ROUTE, SETTINGS_ROUTE } from '../utils/routes'
 import { NavLink } from 'react-router-dom'
 
 interface NavbarItemProps {
@@ -14,14 +9,9 @@ interface NavbarItemProps {
 }
 const NAVBAR_ITEMS: NavbarItemProps[] = [
   {
-    icon: <Users />,
-    path: GROUPS_ROUTE,
+    icon: <Home />,
+    path: DISCOVER_ROUTE,
     activeColor: 'text-blue-500'
-  },
-  {
-    icon: <CalendarDays />,
-    path: EVENTS_ROUTE,
-    activeColor: 'text-green-500'
   },
   {
     icon: <MessageSquare />,

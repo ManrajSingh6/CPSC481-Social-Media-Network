@@ -5,9 +5,8 @@ import LoginPage from './pages/LoginPage.tsx'
 import RegisterPage from './pages/RegisterPage.tsx'
 import ForgotPasswordPage from './pages/ForgotPasswordPage.tsx'
 import {
-  EVENTS_ROUTE,
   FORGOT_ROUTE,
-  GROUPS_ROUTE,
+  DISCOVER_ROUTE,
   LOGIN_ROUTE,
   MESSAGES_ROUTE,
   NOTIFICATIONS_ROUTE,
@@ -15,8 +14,7 @@ import {
   SETTINGS_ROUTE
 } from './utils/routes'
 import { ProtectedRoute } from './components/protectedRoute.tsx'
-import { EventsPage } from './pages/EventsPage.tsx'
-import { GroupsPage } from './pages/GroupsPage.tsx'
+import { DiscoverPage } from './pages/DiscoverPage.tsx'
 import { Layout } from './pages/Layout.tsx'
 import { UserProvider } from './context/userContext.tsx'
 import { PhoneSilhouetteWrapper } from './pages/PhoneSilhoutteWrapper.tsx'
@@ -33,8 +31,7 @@ function App() {
             <Route path={FORGOT_ROUTE} element={<ForgotPasswordPage />} />
             <Route element={<ProtectedRoute />}>
               <Route path='/' element={<Layout />}>
-                <Route path={GROUPS_ROUTE} element={<GroupsPage />} />
-                <Route path={EVENTS_ROUTE} element={<EventsPage />} />
+                <Route path={DISCOVER_ROUTE} element={<DiscoverPage />} />
                 <Route path={MESSAGES_ROUTE} element={<p>Messages Page</p>} />
                 <Route path={SETTINGS_ROUTE} element={<p>Settings Page</p>} />
                 <Route

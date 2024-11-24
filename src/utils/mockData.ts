@@ -5,7 +5,9 @@ export const MOCK_USER: User = {
   email: 'jdoe@mail.com',
   password: 'jdoe',
   fullName: 'John Doe',
-  profilePicUrl: 'https://avatar.iran.liara.run/public/5'
+  profilePicUrl: 'https://avatar.iran.liara.run/public/5',
+  enrolledGroupIds: [2, 3],
+  enrolledEventIds: [3]
 }
 
 export const MOCK_GROUPS: Group[] = [
@@ -30,7 +32,8 @@ export const MOCK_GROUPS: Group[] = [
         createdAt: new Date('2024-11-20T12:00:00Z')
       }
     ],
-    createdAt: new Date('2024-11-10T09:00:00Z')
+    createdAt: new Date('2024-11-10T09:00:00Z'),
+    type: 'Group'
   },
   {
     id: 2,
@@ -54,7 +57,8 @@ export const MOCK_GROUPS: Group[] = [
         createdAt: new Date('2024-11-19T08:30:00Z')
       }
     ],
-    createdAt: new Date('2024-11-05T14:00:00Z')
+    createdAt: new Date('2024-11-05T14:00:00Z'),
+    type: 'Group'
   },
   {
     id: 3,
@@ -78,7 +82,8 @@ export const MOCK_GROUPS: Group[] = [
         createdAt: new Date('2024-11-16T07:45:00Z')
       }
     ],
-    createdAt: new Date('2024-11-08T11:30:00Z')
+    createdAt: new Date('2024-11-08T11:30:00Z'),
+    type: 'Group'
   }
 ]
 
@@ -91,7 +96,8 @@ export const MOCK_EVENTS: Event[] = [
     location: 'Community Hall',
     date: new Date('2024-12-01T10:00:00Z'),
     duration: EventDuration.TwoHours,
-    creator: MOCK_USER
+    creator: MOCK_USER,
+    type: 'Event'
   },
   {
     id: 2,
@@ -101,7 +107,8 @@ export const MOCK_EVENTS: Event[] = [
     location: 'Central Park',
     date: new Date('2024-12-05T15:00:00Z'),
     duration: EventDuration.Hour,
-    creator: MOCK_USER
+    creator: MOCK_USER,
+    type: 'Event'
   },
   {
     id: 3,
@@ -111,6 +118,7 @@ export const MOCK_EVENTS: Event[] = [
     location: 'Downtown Gym',
     date: new Date('2024-12-10T08:00:00Z'),
     duration: EventDuration.Day,
-    creator: MOCK_USER
+    creator: MOCK_USER,
+    type: 'Event'
   }
 ]

@@ -11,7 +11,11 @@ export interface User {
   readonly password: string
   readonly fullName: string
   readonly profilePicUrl: string
+  readonly enrolledGroupIds: number[]
+  readonly enrolledEventIds: number[]
 }
+
+export type GroupOrEvent = 'Group' | 'Event'
 
 export interface Group {
   readonly id: number
@@ -20,6 +24,7 @@ export interface Group {
   readonly creator: User
   readonly posts: GroupPost[]
   readonly createdAt: Date
+  readonly type: GroupOrEvent
 }
 
 // TODO: add more fields to each post like likes, comments etc.
@@ -39,4 +44,5 @@ export interface Event {
   readonly date: Date
   readonly duration: EventDuration
   readonly creator: User
+  readonly type: GroupOrEvent
 }
