@@ -35,7 +35,7 @@ export function InputField<T extends string | number>({
 }: InputFieldProps<T>): JSX.Element {
   return (
     <div className='flex flex-col'>
-      {label && <label className='mb-0.5 text-sm text-header'>{label}</label>}
+      {label && <label className='text-header mb-0.5 text-sm'>{label}</label>}
       <div className='flex items-center'>
         {icon && <p className='absolute pl-2'>{icon}</p>}
         <input
@@ -45,7 +45,7 @@ export function InputField<T extends string | number>({
           name={name}
           placeholder={placeholder}
           required={required}
-          className={`w-full rounded-md border p-2 text-sm focus:border-subtleHover focus:outline-none ${errorCondition ? 'border-red-500' : 'border-slate-300'} ${className}`}
+          className={`focus:border-subtleHover w-full rounded-md border p-2 text-sm focus:outline-none ${errorCondition ? 'border-red-500' : 'border-slate-300'} ${className}`}
           maxLength={maxLengthChars}
           max={maxNumber}
           min={minNumber}

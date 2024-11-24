@@ -4,6 +4,10 @@ interface CustomImageProps {
   readonly className?: string
 }
 
-export function CustomImage({ src, alt, className }: CustomImageProps): JSX.Element {
+export function CustomImage({
+  src,
+  alt,
+  className
+}: CustomImageProps): JSX.Element {
   return <img src={src} alt={alt} className={className} />
 }

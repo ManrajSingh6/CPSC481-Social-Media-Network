@@ -18,7 +18,7 @@ export function Heading({
       >
         {headingText}
       </h1>
-      {subText && <p className='text-sm text-accentText'>{subText}</p>}
+      {subText && <p className='text-accentText text-sm'>{subText}</p>}
     </div>
   )
 }
