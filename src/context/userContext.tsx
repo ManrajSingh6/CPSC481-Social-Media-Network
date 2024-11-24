@@ -33,9 +33,6 @@ export function UserProvider({ children }: UserProviderProps): JSX.Element {
   useEffect(() => {
     setIsUserLoading(true)
     const existingLoggedInUser = localStorage.getItem(LOCAL_STORAGE_USER_KEY)
-
-    console.log('existingLoggedInUser', existingLoggedInUser)
-
     if (existingLoggedInUser) {
       setUser(JSON.parse(existingLoggedInUser))
     }
