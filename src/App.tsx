@@ -14,20 +14,27 @@ import {
 import { ProtectedRoute } from './components/protectedRoute.tsx'
 import { EventsPage } from './pages/EventsPage.tsx'
 import { GroupsPage } from './pages/GroupsPage.tsx'
+import { Layout } from './pages/Layout.tsx'
+import { UserProvider } from './context/userContext.tsx'
+
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path='/' element={<Navigate to={LOGIN_ROUTE} />} />
-        <Route path={LOGIN_ROUTE} element={<LoginPage />} />
-        <Route path={REGISTER_ROUTE} element={<RegisterPage />} />
-        <Route path={FORGOT_ROUTE} element={<ForgotPasswordPage />} />
-        <Route element={<ProtectedRoute />}>
-          <Route path={GROUPS_ROUTE} element={<GroupsPage />} />
-          <Route path={EVENTS_ROUTE} element={<EventsPage />} />
-        </Route>
-      </Routes>
-    </Router>
+    <UserProvider>
+      <Router>
+        <Routes>
+          <Route path='/' element={<Navigate to={LOGIN_ROUTE} />} />
+          <Route path={LOGIN_ROUTE} element={<LoginPage />} />
+          <Route path={REGISTER_ROUTE} element={<RegisterPage />} />
+          <Route path={FORGOT_ROUTE} element={<ForgotPasswordPage />} />
+          <Route element={<ProtectedRoute />}>
+            <Route path='/' element={<Layout />}>
+              <Route path={GROUPS_ROUTE} element={<GroupsPage />} />
+              <Route path={EVENTS_ROUTE} element={<EventsPage />} />
+            </Route>
+          </Route>
+        </Routes>
+      </Router>
+    </UserProvider>
   )
 }
 
