@@ -1,7 +1,7 @@
 import '../assets/styles.css'
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-import { GROUPS_ROUTE, REGISTER_ROUTE } from '../utils/routes'
+import { DISCOVER_ROUTE, REGISTER_ROUTE } from '../utils/routes'
 import { useState } from 'react'
 import { MOCK_USER } from '../utils/mockData'
 import { useUser } from '../context/userContext'
@@ -30,7 +30,7 @@ function LoginPage() {
     const success = loginUser(loginData.username, loginData.password)
 
     if (success) {
-      navigate(GROUPS_ROUTE)
+      navigate(DISCOVER_ROUTE)
     } else {
       alert('Invalid login') // TODO: use nicer alerting mechanism
     }
