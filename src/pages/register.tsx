@@ -4,6 +4,7 @@ import { LOGIN_ROUTE } from '../utils/routes'
 
 function Register() {
   const navigate = useNavigate()
+
   const handleLogin = () => {
     navigate(LOGIN_ROUTE)
   }
@@ -29,7 +30,6 @@ function Register() {
       </button>
       <h1 className='header'>Register</h1>
       <p className='subheader'>Please enter your login details</p>
-
       <div className='form-container'>
         <text className='label'>Email</text>
         <input type='email' className='input' placeholder='Enter email' />
@@ -43,13 +43,11 @@ function Register() {
           className='input'
           placeholder='Confirm Password'
         />
-
         <button className='register-button'>Register</button>
         <button className='login-button' onClick={handleLogin}>
           Already a User? Login
         </button>
       </div>
-
       <div className='footer'>
         <span>Terms & Conditions</span>
         <span>About Us</span>
