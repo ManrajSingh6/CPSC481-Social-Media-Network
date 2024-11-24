@@ -9,8 +9,10 @@ import {
   FORGOT_ROUTE,
   GROUPS_ROUTE,
   LOGIN_ROUTE,
+  MESSAGES_ROUTE,
   NOTIFICATIONS_ROUTE,
-  REGISTER_ROUTE
+  REGISTER_ROUTE,
+  SETTINGS_ROUTE
 } from './utils/routes'
 import { ProtectedRoute } from './components/protectedRoute.tsx'
 import { EventsPage } from './pages/EventsPage.tsx'
@@ -31,6 +33,8 @@ function App() {
             <Route path='/' element={<Layout />}>
               <Route path={GROUPS_ROUTE} element={<GroupsPage />} />
               <Route path={EVENTS_ROUTE} element={<EventsPage />} />
+              <Route path={MESSAGES_ROUTE} element={<p>Messages Page</p>} />
+              <Route path={SETTINGS_ROUTE} element={<p>Settings Page</p>} />
               <Route
                 path={NOTIFICATIONS_ROUTE}
                 element={<p>Notifications Page</p>}

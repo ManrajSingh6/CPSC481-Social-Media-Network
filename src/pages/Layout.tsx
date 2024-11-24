@@ -12,12 +12,16 @@ export function Layout(): JSX.Element {
   }
 
   return (
-    <div className='bg-bgColor flex h-screen flex-col justify-between gap-6 p-4'>
-      <PageHeader user={user} />
-      <div className='h-full'>
+    <div className='bg-bgColor flex h-screen flex-col justify-between'>
+      <div className='sticky border p-4'>
+        <PageHeader user={user} />
+      </div>
+      <div className='h-full border p-4'>
         <Outlet />
       </div>
-      <Navbar />
+      <div className='sticky border p-4'>
+        <Navbar />
+      </div>
     </div>
   )
 }
