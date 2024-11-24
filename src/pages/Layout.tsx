@@ -12,7 +12,7 @@ export function Layout(): JSX.Element {
   }
 
   return (
-    <div className='bg-bgColor flex h-screen flex-col justify-between'>
+    <div className='flex h-screen w-full flex-col justify-between rounded-[40px] bg-bgColor'>
       <div className='sticky border p-4'>
         <PageHeader user={user} />
       </div>
