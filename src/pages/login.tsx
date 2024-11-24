@@ -1,15 +1,16 @@
 import '../assets/styles.css';
 import { useNavigate } from 'react-router-dom';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { REGISTER_ROUTE } from '../utils/routes';
 
 function Login() {
     const navigate = useNavigate();
     const handleRegister = () => {
-        navigate('/register')
+        navigate(REGISTER_ROUTE)
     };
   return (
     <div className="login-container">
-      
+
       <h1 className="header">Welcome Back :)</h1>
       <p className="subheader">Please enter your login details</p>
 
@@ -34,16 +35,14 @@ function Login() {
             <hr style={styles.hr}/>
         </div>
       <br></br>
-      <button 
+      <button
         style={{width: '90%'}}
         className="login-button"
         onClick={handleRegister}>
         Register
       </button>
-        
+
       <div className="footer">
-        
-        
         <span>Terms & Conditions</span>
         <span>About Us</span>
       </div>

@@ -1,14 +1,16 @@
 import '../assets/styles.css';
 import { useNavigate } from 'react-router-dom';
+import { LOGIN_ROUTE } from '../utils/routes';
+
 function Register() {
     const navigate = useNavigate();
     const handleLogin = () => {
-        navigate('/login')
+        navigate(LOGIN_ROUTE)
     };
 
   return (
     <div className="login-container">
-      <button 
+      <button
       className='back-icon-button'
       onClick={handleLogin}>
         <svg
