@@ -1,3 +1,5 @@
 export const LOGIN_ROUTE = '/login'
 export const REGISTER_ROUTE = '/register'
 export const FORGOT_ROUTE = '/forgot'
+export const GROUPS_ROUTE = '/groups'
+export const EVENTS_ROUTE = '/events'

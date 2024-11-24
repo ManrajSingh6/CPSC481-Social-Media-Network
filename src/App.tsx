@@ -7,9 +7,13 @@ import ForgotPasswordPage from './pages/ForgotPasswordPage.tsx'
 import {
   EVENTS_ROUTE,
   FORGOT_ROUTE,
+  GROUPS_ROUTE,
   LOGIN_ROUTE,
   REGISTER_ROUTE
 } from './utils/routes'
+import { ProtectedRoute } from './components/protectedRoute.tsx'
+import { EventsPage } from './pages/EventsPage.tsx'
+import { GroupsPage } from './pages/GroupsPage.tsx'
 function App() {
   return (
     <Router>
@@ -18,7 +22,10 @@ function App() {
         <Route path={LOGIN_ROUTE} element={<LoginPage />} />
         <Route path={REGISTER_ROUTE} element={<RegisterPage />} />
         <Route path={FORGOT_ROUTE} element={<ForgotPasswordPage />} />
-        <Route path={EVENTS_ROUTE} element />
+        <Route element={<ProtectedRoute />}>
+          <Route path={GROUPS_ROUTE} element={<GroupsPage />} />
+          <Route path={EVENTS_ROUTE} element={<EventsPage />} />
+        </Route>
       </Routes>
     </Router>
   )
