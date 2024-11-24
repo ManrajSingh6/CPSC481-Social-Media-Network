@@ -12,14 +12,19 @@ export function Layout(): JSX.Element {
   }
 
   return (
-    <div className='flex h-screen w-full flex-col justify-between rounded-[40px] bg-bgColor'>
-      <div className='sticky border p-4'>
+    <div className='flex h-screen w-full flex-col bg-bgColor'>
+      {/* Header */}
+      <div className='sticky top-0 z-[9999999] border bg-bgColor p-4'>
         <PageHeader user={user} />
       </div>
-      <div className='h-full border p-4'>
+
+      {/* Main Content (Scrollable) */}
+      <div className='no-scrollbar flex-1 overflow-y-auto p-4'>
         <Outlet />
       </div>
-      <div className='sticky border p-4'>
+
+      {/* Navbar (Fixed at Bottom) */}
+      <div className='sticky bottom-0 z-[9999999] border bg-bgColor p-4'>
         <Navbar />
       </div>
     </div>
