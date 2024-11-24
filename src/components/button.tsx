@@ -6,6 +6,7 @@ export interface ButtonProps {
   readonly customStyle?: string
   readonly disabled?: boolean
   readonly roundedValue?: string
+  readonly paddingValue?: string
 }
 
 export function Button({
@@ -15,7 +16,8 @@ export function Button({
   variant = 'primary',
   customStyle = '',
   disabled,
-  roundedValue = 'rounded-lg'
+  roundedValue = 'rounded-lg',
+  paddingValue = 'p-1'
 }: ButtonProps): JSX.Element {
   const variantStyles =
     !customStyle && variant === 'primary'
@@ -26,7 +28,7 @@ export function Button({
 
   return (
     <button
-      className={`flex items-center justify-center gap-2 ${roundedValue} p-1 text-sm shadow-sm transition-all ${variantStyles} ${customStyle}`}
+      className={`flex items-center justify-center gap-2 ${roundedValue} ${paddingValue} text-sm shadow-sm transition-all ${variantStyles} ${customStyle}`}
       onClick={onClick}
       disabled={disabled}
     >
