@@ -4,20 +4,30 @@ import { Heading } from '../components/heading'
 import { InputField } from '../components/inputField'
 import { MOCK_EVENTS, MOCK_GROUPS } from '../utils/mockData'
 import { GroupOverviewCard } from '../components/groups/groupOverviewCard'
-import { filterGroupsEventsBySearchTerm } from '../utils/filters'
+import {
+  filterGroupsEventsBySearchTerm,
+  sortEventsByDateDesc,
+  sortGroupsByCreatedAtDateDesc
+} from '../utils/filters'
 import { ButtonGroup } from '../components/buttonGroup'
 import { EventOverviewCard } from '../components/events/eventOverviewCard'
 import { Event, Group, GroupOrEvent } from '../utils/types'
 
-const MOCK_DATA = [...MOCK_GROUPS, ...MOCK_EVENTS]
+const MOCK_GROUPS_SORTED_DATE_DESC = sortGroupsByCreatedAtDateDesc(MOCK_GROUPS) // Sorted by the date the group was created
+const MOCK_EVENTS_SORTED_DATE_DESC = sortEventsByDateDesc(MOCK_EVENTS) // Sorted by the actual event's date
+
+const MOCK_DATA = [
+  ...MOCK_GROUPS_SORTED_DATE_DESC,
+  ...MOCK_EVENTS_SORTED_DATE_DESC
+]
 
 export function DiscoverPage(): JSX.Element {
   const [filterItem, setFilterItem] = useState<GroupOrEvent>('Group')
   const [searchTerm, setSearchTerm] = useState('')
 
-  const filteredDataByItem = MOCK_DATA.filter((item) => {
-    return item.type === filterItem
-  })
+  const filteredDataByItem = MOCK_DATA.filter(
+    (item) => item.type === filterItem
+  )
 
   const filteredDataBySearchTerm = filterGroupsEventsBySearchTerm(
     filteredDataByItem,

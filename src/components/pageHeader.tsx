@@ -18,7 +18,10 @@ export function PageHeader({ user }: PageHeaderProps): JSX.Element {
         alt='user-profile-pic'
         className='h-14 w-14 rounded-full shadow-md'
       />
-      <Bell className='h-6 w-6' onClick={() => navigate(NOTIFICATIONS_ROUTE)} />
+      <Bell
+        className='h-6 w-6 cursor-pointer'
+        onClick={() => navigate(NOTIFICATIONS_ROUTE)}
+      />
     </div>
   )
 }
