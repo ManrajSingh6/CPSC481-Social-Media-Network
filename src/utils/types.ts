@@ -11,6 +11,8 @@ export interface User {
   readonly password: string
   readonly fullName: string
   readonly profilePicUrl: string
+  readonly enrolledGroupIds: number[]
+  readonly enrolledEventIds: number[]
 }
 
 export type GroupOrEvent = 'Group' | 'Event'

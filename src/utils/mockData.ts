@@ -5,7 +5,9 @@ export const MOCK_USER: User = {
   email: 'jdoe@mail.com',
   password: 'jdoe',
   fullName: 'John Doe',
-  profilePicUrl: 'https://avatar.iran.liara.run/public/5'
+  profilePicUrl: 'https://avatar.iran.liara.run/public/5',
+  enrolledGroupIds: [2, 3],
+  enrolledEventIds: [3]
 }
 
 export const MOCK_GROUPS: Group[] = [
