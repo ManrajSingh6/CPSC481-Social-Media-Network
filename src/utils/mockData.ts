@@ -1,0 +1,116 @@
+import { EventDuration, Group, User, Event } from './types'
+
+export const MOCK_USER: User = {
+  username: 'jdoe',
+  email: 'jdoe@mail.com',
+  password: 'jdoe',
+  fullName: 'John Doe',
+  profilePicUrl: 'https://avatar.iran.liara.run/public/5'
+}
+
+export const MOCK_GROUPS: Group[] = [
+  {
+    id: 1,
+    name: 'Baking',
+    description:
+      'A group for baking enthusiasts who love experimenting with recipes, sharing baking tips, and learning new techniques to create delicious treats. Whether you are a beginner or a pro, everyone is welcome!',
+    creator: MOCK_USER,
+    posts: [
+      {
+        id: 1,
+        title: 'Best Chocolate Chip Cookie Recipe',
+        content:
+          'Here is a foolproof recipe for the best chocolate chip cookies!',
+        createdAt: new Date('2024-11-20T12:00:00Z')
+      },
+      {
+        id: 2,
+        title: 'Sourdough Starter Guide',
+        content: 'A step-by-step guide to creating your own sourdough starter.',
+        createdAt: new Date('2024-11-20T12:00:00Z')
+      }
+    ],
+    createdAt: new Date('2024-11-10T09:00:00Z')
+  },
+  {
+    id: 2,
+    name: 'Cars',
+    description:
+      'A group for car enthusiasts who love discussing everything about automobiles, from classic muscle cars to the latest electric vehicles. Share your passion, ask for advice, and explore the world of cars with fellow gearheads.',
+    creator: MOCK_USER,
+    posts: [
+      {
+        id: 1,
+        title: 'Top 10 Sports Cars of 2024',
+        content:
+          'Here’s a list of the top 10 sports cars you should check out this year. Let us know your favorites!',
+        createdAt: new Date('2024-11-18T15:00:00Z')
+      },
+      {
+        id: 2,
+        title: 'How to Maintain Your Car’s Engine',
+        content:
+          'An essential guide to keeping your car engine running smoothly for years to come.',
+        createdAt: new Date('2024-11-19T08:30:00Z')
+      }
+    ],
+    createdAt: new Date('2024-11-05T14:00:00Z')
+  },
+  {
+    id: 3,
+    name: 'Coffee',
+    description:
+      'A group for coffee lovers to explore brewing techniques, share favorite roasts, and discuss the art of making the perfect cup. Whether you’re into espresso, cold brew, or pour-over, join us for some caffeinated fun!',
+    creator: MOCK_USER,
+    posts: [
+      {
+        id: 1,
+        title: 'The Ultimate Guide to Pour-Over Coffee',
+        content:
+          'Learn how to make a perfect pour-over coffee with this detailed step-by-step guide.',
+        createdAt: new Date('2024-11-15T10:00:00Z')
+      },
+      {
+        id: 2,
+        title: 'Top 5 Coffee Beans for Espresso',
+        content:
+          'Discover the best coffee beans to create a rich and creamy espresso at home.',
+        createdAt: new Date('2024-11-16T07:45:00Z')
+      }
+    ],
+    createdAt: new Date('2024-11-08T11:30:00Z')
+  }
+]
+
+export const MOCK_EVENTS: Event[] = [
+  {
+    id: 1,
+    name: 'Community Baking Workshop',
+    description:
+      'A fun-filled baking workshop where you can learn to bake delicious cakes and pastries.',
+    location: 'Community Hall',
+    date: new Date('2024-12-01T10:00:00Z'),
+    duration: EventDuration.TwoHours,
+    creator: MOCK_USER
+  },
+  {
+    id: 2,
+    name: 'Photography Walk',
+    description:
+      "Join us for a photography walk through the city's most scenic spots. Capture the beauty around you!",
+    location: 'Central Park',
+    date: new Date('2024-12-05T15:00:00Z'),
+    duration: EventDuration.Hour,
+    creator: MOCK_USER
+  },
+  {
+    id: 3,
+    name: 'Fitness Bootcamp',
+    description:
+      'An intensive fitness bootcamp to push your limits and help you achieve your fitness goals.',
+    location: 'Downtown Gym',
+    date: new Date('2024-12-10T08:00:00Z'),
+    duration: EventDuration.Day,
+    creator: MOCK_USER
+  }
+]
