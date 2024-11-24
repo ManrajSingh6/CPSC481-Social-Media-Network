@@ -12,7 +12,7 @@ export function Layout(): JSX.Element {
   }
 
   return (
-    <div className='bg-bgColor flex h-screen flex-col justify-between'>
+    <div className='bg-bgColor flex h-screen flex-col justify-between p-4'>
       <PageHeader user={user} />
       <Outlet />
       <Navbar />

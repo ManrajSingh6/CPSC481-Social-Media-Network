@@ -8,7 +8,7 @@ interface PageHeaderProps {
 
 export function PageHeader({ user }: PageHeaderProps): JSX.Element {
   return (
-    <div className='flex items-center justify-between p-4'>
+    <div className='flex items-center justify-between'>
       <CustomImage
         src={user.profilePicUrl}
         alt='user-profile-pic'
