@@ -2,17 +2,14 @@ import { Heading } from '../components/common/heading'
 import { AddButton } from '../components/common/addButton'
 import MessageCard from '../components/messageCard'
 import { MOCK_MESSAGES } from '../utils/mockData'
-import { DirectMessage } from '../utils/types'
 
 export function MessagePage(): JSX.Element {
   return (
     <div className='flex h-full flex-col gap-4'>
-      <div className='flex items-center justify-between'>
-        <Heading headingText='Direct Messages' />
-      </div>
+      <Heading headingText='Direct Messages' />
       <div className=''>
         {MOCK_MESSAGES.map((item) => {
-          return <MessageCard dm={item as DirectMessage} />
+          return <MessageCard dm={item} key={item.id} />
         })}
       </div>
       <div className='mb-2 mt-auto self-end'>
