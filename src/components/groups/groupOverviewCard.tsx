@@ -1,9 +1,9 @@
 import { useUser } from '../../context/userContext'
 import { trimString } from '../../utils/formatting'
 import { Group } from '../../utils/types'
-import { Button } from '../util/button'
-import { CustomImage } from '../util/customImage'
-import { Heading } from '../util/heading'
+import { Button } from '../common/button'
+import { CustomImage } from '../common/customImage'
+import { Heading } from '../common/heading'
 
 const TRIM_LENGTH_CHARS = 100
 

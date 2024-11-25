@@ -7,6 +7,7 @@ const LOCAL_STORAGE_USER_KEY = 'logged_in_user'
 interface UserContextType {
   readonly user: User | null
   readonly login: (username: string, password: string) => boolean
+  readonly logout: () => void
   readonly enrollUserInGroupOrEvent: (
     groupOrEventId: number,
     type: GroupOrEvent
@@ -36,6 +37,11 @@ export function UserProvider({ children }: UserProviderProps): JSX.Element {
     }
 
     return false
+  }
+
+  function logout(): void {
+    setUser(null)
+    localStorage.removeItem(LOCAL_STORAGE_USER_KEY)
   }
 
   function enrollUserInGroupOrEvent(
@@ -105,6 +111,7 @@ export function UserProvider({ children }: UserProviderProps): JSX.Element {
       value={{
         user,
         login,
+        logout,
         isUserLoading,
         enrollUserInGroupOrEvent,
         unenrollUserInGroupOrEvent

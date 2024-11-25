@@ -1,5 +1,11 @@
-import { EventDuration, Group, User, Event, 
-  DirectMessage, CustomNotification } from './types'
+import {
+  EventDuration,
+  Group,
+  User,
+  Event,
+  DirectMessage,
+  CustomNotification
+} from './types'
 
 export const MOCK_USER: User = {
   username: 'jdoe',
@@ -127,71 +133,71 @@ export const MOCK_EVENTS: Event[] = [
 export const MOCK_MESSAGES: DirectMessage[] = [
   {
     id: 1,
-    pictureURL: "https://avatar.iran.liara.run/public/1",
-    name: "Aubrey Graham",
-    message: "Thanks to your recipe!",
-    time: "4:23 PM",
+    pictureURL: 'https://avatar.iran.liara.run/public/1',
+    name: 'Aubrey Graham',
+    message: 'Thanks to your recipe!',
+    time: '4:23 PM'
   },
   {
     id: 2,
-    pictureURL: "https://avatar.iran.liara.run/public/2",
-    name: "Sam Kim",
-    message: "Come by to my study session later",
-    time: "1:09 PM",
+    pictureURL: 'https://avatar.iran.liara.run/public/2',
+    name: 'Sam Kim',
+    message: 'Come by to my study session later',
+    time: '1:09 PM'
   },
   {
     id: 3,
-    pictureURL: "https://avatar.iran.liara.run/public/3",
-    name: "Luke Chiang",
-    message: "Check out this song: ...",
-    time: "12:10 PM",
-  },
+    pictureURL: 'https://avatar.iran.liara.run/public/3',
+    name: 'Luke Chiang',
+    message: 'Check out this song: ...',
+    time: '12:10 PM'
+  }
 ]
 
 export const MOCK_NOTIFICATIONS: CustomNotification[] = [
   {
     id: 1,
-    pictureURL: "https://avatar.iran.liara.run/public/1",
-    time: "12:18 PM",
-    message1: "shared a post in",
-    message2: "group",
-    value1: "Aubrey Graham",
-    value2: "Cars",
+    pictureURL: 'https://avatar.iran.liara.run/public/1',
+    time: '12:18 PM',
+    message1: 'shared a post in',
+    message2: 'group',
+    value1: 'Aubrey Graham',
+    value2: 'Cars'
   },
   {
     id: 2,
-    pictureURL: "https://avatar.iran.liara.run/public/2",
-    time: "1d",
-    message1: "occurs today!",
-    message2: "",
-    value1: "Study Session @ 3:15pm",
-    value2: "",
+    pictureURL: 'https://avatar.iran.liara.run/public/2',
+    time: '1d',
+    message1: 'occurs today!',
+    message2: '',
+    value1: 'Study Session @ 3:15pm',
+    value2: ''
   },
   {
     id: 3,
-    pictureURL: "https://avatar.iran.liara.run/public/3",
-    time: "5d",
-    message1: "shared a post in",
-    message2: "group",
-    value1: "Luke Chiang",
-    value2: "baking",
+    pictureURL: 'https://avatar.iran.liara.run/public/3',
+    time: '5d',
+    message1: 'shared a post in',
+    message2: 'group',
+    value1: 'Luke Chiang',
+    value2: 'baking'
   },
   {
     id: 4,
-    pictureURL: "https://avatar.iran.liara.run/public/3",
-    time: "5d",
+    pictureURL: 'https://avatar.iran.liara.run/public/3',
+    time: '5d',
     message1: "RSVP'd to your",
-    message2: "event",
-    value1: "Luke Chiang",
-    value2: "Baking Class",
+    message2: 'event',
+    value1: 'Luke Chiang',
+    value2: 'Baking Class'
   },
   {
     id: 5,
-    pictureURL: "https://avatar.iran.liara.run/public/2",
-    time: "3w",
-    message1: "shared a post in",
-    message2: "group",
-    value1: "Sam Kim",
-    value2: "Cars",
+    pictureURL: 'https://avatar.iran.liara.run/public/2',
+    time: '3w',
+    message1: 'shared a post in',
+    message2: 'group',
+    value1: 'Sam Kim',
+    value2: 'Cars'
   }
 ]
