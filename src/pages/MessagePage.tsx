@@ -10,7 +10,7 @@ export function MessagePage(): JSX.Element {
         <Heading headingText='Direct Messages' />
         <AddButton onClick={() => {}} />
       </div>
-      <div className=''>
+      <div>
         {MOCK_MESSAGES.map((item) => {
           return <MessageCard dm={item} key={item.id} />
         })}
