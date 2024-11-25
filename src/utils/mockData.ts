@@ -1,4 +1,4 @@
-import { EventDuration, Group, User, Event } from './types'
+import { EventDuration, Group, User, Event, DirectMessage } from './types'
 
 export const MOCK_USER: User = {
   username: 'jdoe',
@@ -121,4 +121,28 @@ export const MOCK_EVENTS: Event[] = [
     creator: MOCK_USER,
     type: 'Event'
   }
+]
+
+export const MOCK_MESSAGES: DirectMessage[] = [
+  {
+    id: 1,
+    pictureURL: "https://avatar.iran.liara.run/public/1",
+    name: "Aubrey Graham",
+    message: "Thanks to your recipe!",
+    time: "4:23 PM",
+  },
+  {
+    id: 2,
+    pictureURL: "https://avatar.iran.liara.run/public/2",
+    name: "Sam Kim",
+    message: "Come by to my study session later",
+    time: "1:09 PM",
+  },
+  {
+    id: 3,
+    pictureURL: "https://avatar.iran.liara.run/public/3",
+    name: "Luke Chiang",
+    message: "Check out this song: ...",
+    time: "12:10 PM",
+  },
 ]
