@@ -1,10 +1,10 @@
-import '../assets/styles.css'
+import '../../assets/styles.css'
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-import { DISCOVER_ROUTE, REGISTER_ROUTE } from '../utils/routes'
+import { DISCOVER_ROUTE, REGISTER_ROUTE } from '../../utils/routes'
 import { useState } from 'react'
-import { MOCK_USER } from '../utils/mockData'
-import { useUser } from '../context/userContext'
+import { MOCK_USER } from '../../utils/mockData'
+import { useUser } from '../../context/userContext'
 
 interface LoginData {
   readonly username: string

@@ -1,9 +1,9 @@
 import './assets/styles.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Navigate } from 'react-router-dom'
-import LoginPage from './pages/LoginPage.tsx'
-import RegisterPage from './pages/RegisterPage.tsx'
-import ForgotPasswordPage from './pages/ForgotPasswordPage.tsx'
+import LoginPage from './pages/auth/LoginPage.tsx'
+import RegisterPage from './pages/auth/RegisterPage.tsx'
+import ForgotPasswordPage from './pages/auth/ForgotPasswordPage.tsx'
 import {
   FORGOT_ROUTE,
   DISCOVER_ROUTE,
@@ -20,6 +20,7 @@ import { UserProvider } from './context/userContext.tsx'
 import { PhoneSilhouetteWrapper } from './pages/PhoneSilhoutteWrapper.tsx'
 import { MessagePage } from './pages/MessagePage.tsx'
 import SettingsPage from './pages/SettingsPage.tsx'
+import NotificationsPage from './pages/NotificationPage.tsx'
 
 function App() {
   return (
@@ -38,7 +39,7 @@ function App() {
                 <Route path={SETTINGS_ROUTE} element={<SettingsPage />} />
                 <Route
                   path={NOTIFICATIONS_ROUTE}
-                  element={<p>Notifications Page</p>}
+                  element={<NotificationsPage />}
                 />
               </Route>
             </Route>

@@ -1,5 +1,5 @@
-import { CustomImage } from "./customImage"
-import { Heading } from "./heading"
+import { CustomImage } from "./util/customImage"
+import { Heading } from "./util/heading"
 import { DirectMessage } from "../utils/types"
 
 interface props {
@@ -19,10 +19,10 @@ export default function messageCard( { dm } : props ): JSX.Element{
             <div className=' flex-1'>
                 <div className='flex items-center justify-between'>
                     <Heading headingText={dm.name} headingSize='medium'/>
-                    <p className=''>{dm.time}</p>
+                    <p className='text-gray-600'>{dm.time}</p>
                     
                 </div>
-                <div className=' w-max self-start'>
+                <div className=' w-max self-start text-gray-600'>
                     <p className=''>{dm.message}</p>
                 </div>
             </div>

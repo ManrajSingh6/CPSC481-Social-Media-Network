@@ -1,6 +1,6 @@
-import '../assets/styles.css'
+import '../../assets/styles.css'
 import { useNavigate } from 'react-router-dom'
-import { LOGIN_ROUTE } from '../utils/routes'
+import { LOGIN_ROUTE } from '../../utils/routes'
 
 function RegisterPage() {
   const navigate = useNavigate()

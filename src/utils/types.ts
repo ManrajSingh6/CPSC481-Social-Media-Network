@@ -54,3 +54,13 @@ export interface DirectMessage {
   readonly message: string
   readonly time: string
 }
+
+export interface CustomNotification{
+  readonly id: number
+  readonly pictureURL: string
+  readonly time: string
+  readonly message1: string
+  readonly message2: string
+  readonly value1: string
+  readonly value2: string
+}
