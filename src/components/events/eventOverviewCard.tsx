@@ -1,8 +1,8 @@
 import { useUser } from '../../context/userContext'
 import { Event } from '../../utils/types'
-import { Button } from '../button'
-import { CustomImage } from '../customImage'
-import { Heading } from '../heading'
+import { Button } from '../util/button'
+import { CustomImage } from '../util/customImage'
+import { Heading } from '../util/heading'
 
 interface EventOverviewCardProps {
   readonly event: Event
