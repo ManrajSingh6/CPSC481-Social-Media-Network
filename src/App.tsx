@@ -18,6 +18,7 @@ import { DiscoverPage } from './pages/DiscoverPage.tsx'
 import { Layout } from './pages/Layout.tsx'
 import { UserProvider } from './context/userContext.tsx'
 import { PhoneSilhouetteWrapper } from './pages/PhoneSilhoutteWrapper.tsx'
+import { MessagePage } from './pages/MessagePage.tsx'
 
 function App() {
   return (
@@ -32,7 +33,7 @@ function App() {
             <Route element={<ProtectedRoute />}>
               <Route path='/' element={<Layout />}>
                 <Route path={DISCOVER_ROUTE} element={<DiscoverPage />} />
-                <Route path={MESSAGES_ROUTE} element={<p>Messages Page</p>} />
+                <Route path={MESSAGES_ROUTE} element={<MessagePage />} />
                 <Route path={SETTINGS_ROUTE} element={<p>Settings Page</p>} />
                 <Route
                   path={NOTIFICATIONS_ROUTE}

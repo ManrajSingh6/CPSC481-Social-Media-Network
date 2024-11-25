@@ -46,3 +46,11 @@ export interface Event {
   readonly creator: User
   readonly type: GroupOrEvent
 }
+
+export interface DirectMessage {
+  readonly id: number
+  readonly pictureURL: string
+  readonly name: string
+  readonly message: string
+  readonly time: string
+}
