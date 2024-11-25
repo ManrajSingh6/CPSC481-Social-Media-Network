@@ -20,7 +20,7 @@ export function PageHeader({ user }: PageHeaderProps): JSX.Element {
       <CustomImage
         src={user.profilePicUrl}
         alt='user-profile-pic'
-        className='h-14 w-14 rounded-full shadow-md'
+        className='h-11 w-11 rounded-full shadow-md'
       />
       <Bell
         className={`h-6 w-6 cursor-pointer ${isOnNotificationsPage ? 'text-black-500' : 'text-gray-500'}`}

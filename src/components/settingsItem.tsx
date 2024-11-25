@@ -29,7 +29,7 @@ export default function SettingsItem({
       >
         {title}
       </p>
-      {color == 'black' && <ChevronRightIcon className='ml-auto' />}
+      {color === 'black' && <ChevronRightIcon className='ml-auto' />}
     </div>
   )
 }
