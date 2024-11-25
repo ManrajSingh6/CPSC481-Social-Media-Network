@@ -1,9 +1,20 @@
+import { useNavigate } from 'react-router-dom'
 import { CustomImage } from '../components/common/customImage'
 import { Heading } from '../components/common/heading'
 import SettingsItem from '../components/settingsItem'
+import { useUser } from '../context/userContext'
 import { MOCK_USER } from '../utils/mockData'
+import { LOGIN_ROUTE } from '../utils/routes'
 
 export default function SettingsPage(): JSX.Element {
+  const { logout } = useUser()
+  const navigate = useNavigate()
+
+  function handleLogout(): void {
+    logout()
+    navigate(LOGIN_ROUTE)
+  }
+
   return (
     <div>
       <div>
@@ -34,7 +45,12 @@ export default function SettingsPage(): JSX.Element {
           <SettingsItem iconUrl='Info' title='App Updates' />
         </div>
         <div className='my-2 rounded-lg border bg-white p-2'>
-          <SettingsItem iconUrl='LogOut' title='Logout' color='red' />
+          <SettingsItem
+            iconUrl='LogOut'
+            title='Logout'
+            color='red'
+            onClick={handleLogout}
+          />
         </div>
       </div>
     </div>
