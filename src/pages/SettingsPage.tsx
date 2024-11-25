@@ -4,7 +4,16 @@ import { Heading } from '../components/common/heading'
 import SettingsItem from '../components/settingsItem'
 import { useUser } from '../context/userContext'
 import { MOCK_USER } from '../utils/mockData'
-import { LOGIN_ROUTE } from '../utils/routes'
+import {
+  APP_UPDATES_ROUTE,
+  FAQ_ROUTE,
+  LOGIN_ROUTE,
+  NOTIFCATON_SETTINGS_ROUTE,
+  NOTIFICATIONS_ROUTE,
+  PRIVACY_SAFETY_ROUTE,
+  PROFILE_ROUTE,
+  TERMS_AND_CONDITIONS_ROUTE
+} from '../utils/routes'
 
 export default function SettingsPage(): JSX.Element {
   const { logout } = useUser()
@@ -31,18 +40,39 @@ export default function SettingsPage(): JSX.Element {
       <div>
         <p className='my-2'>Account settings</p>
         <div className='rounded-lg border bg-white p-2'>
-          <SettingsItem iconUrl='User' title='Profile' />
-          <SettingsItem iconUrl='Bell' title='Notification' />
-          <SettingsItem iconUrl='Shield' title='Privacy and Safety' />
+          <SettingsItem
+            iconUrl='User'
+            title='Profile'
+            onClick={() => navigate(PROFILE_ROUTE)}
+          />
+          <SettingsItem
+            iconUrl='Bell'
+            title='Notification'
+            onClick={() => navigate(NOTIFCATON_SETTINGS_ROUTE)}
+          />
+          <SettingsItem
+            iconUrl='Shield'
+            title='Privacy and Safety'
+            onClick={() => navigate(PRIVACY_SAFETY_ROUTE)}
+          />
         </div>
         <p className='my-2'>Support</p>
         <div className='rounded-lg border bg-white p-2'>
           <SettingsItem
             iconUrl='CircleHelp'
             title='Frequently Asked Questions'
+            onClick={() => navigate(FAQ_ROUTE)}
           />
-          <SettingsItem iconUrl='BookOpen' title='Terms & Conditions' />
-          <SettingsItem iconUrl='Info' title='App Updates' />
+          <SettingsItem
+            iconUrl='BookOpen'
+            title='Terms & Conditions'
+            onClick={() => navigate(TERMS_AND_CONDITIONS_ROUTE)}
+          />
+          <SettingsItem
+            iconUrl='Info'
+            title='App Updates'
+            onClick={() => navigate(APP_UPDATES_ROUTE)}
+          />
         </div>
         <div className='my-2 rounded-lg border bg-white p-2'>
           <SettingsItem
