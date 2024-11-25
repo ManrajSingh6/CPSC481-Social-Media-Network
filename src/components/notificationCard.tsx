@@ -1,5 +1,5 @@
 import { CustomNotification } from '../utils/types'
-import { CustomImage } from './util/customImage'
+import { CustomImage } from './common/customImage'
 
 interface NotificationCardProps {
   notif: CustomNotification

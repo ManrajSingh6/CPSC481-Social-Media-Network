@@ -1,5 +1,5 @@
 import NotificationCard from '../components/notificationCard'
-import { Heading } from '../components/util/heading'
+import { Heading } from '../components/common/heading'
 import { MOCK_NOTIFICATIONS } from '../utils/mockData'
 
 export default function NotificationsPage(): JSX.Element {

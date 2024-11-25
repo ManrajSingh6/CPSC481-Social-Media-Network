@@ -1,5 +1,5 @@
-import { CustomImage } from './util/customImage'
-import { Heading } from './util/heading'
+import { CustomImage } from './common/customImage'
+import { Heading } from './common/heading'
 import { DirectMessage } from '../utils/types'
 
 interface props {

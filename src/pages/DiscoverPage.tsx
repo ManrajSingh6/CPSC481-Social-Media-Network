@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { AddButton } from '../components/util/addButton'
-import { Heading } from '../components/util/heading'
-import { InputField } from '../components/util/inputField'
+import { AddButton } from '../components/common/addButton'
+import { Heading } from '../components/common/heading'
+import { InputField } from '../components/common/inputField'
 import { MOCK_EVENTS, MOCK_GROUPS } from '../utils/mockData'
 import { GroupOverviewCard } from '../components/groups/groupOverviewCard'
 import {

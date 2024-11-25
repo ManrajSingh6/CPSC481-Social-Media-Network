@@ -1,6 +1,6 @@
 import { Bell } from 'lucide-react'
 import { User } from '../utils/types'
-import { CustomImage } from './util/customImage'
+import { CustomImage } from './common/customImage'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { NOTIFICATIONS_ROUTE } from '../utils/routes'
 

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Button } from './util/button'
+import { Button } from './common/button'
 
 const FIRST_ELEMENT = 0
 

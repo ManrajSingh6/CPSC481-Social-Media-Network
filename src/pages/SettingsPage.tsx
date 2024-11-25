@@ -1,5 +1,5 @@
-import { CustomImage } from '../components/util/customImage'
-import { Heading } from '../components/util/heading'
+import { CustomImage } from '../components/common/customImage'
+import { Heading } from '../components/common/heading'
 import SettingsItem from '../components/settingsItem'
 import { MOCK_USER } from '../utils/mockData'
 
