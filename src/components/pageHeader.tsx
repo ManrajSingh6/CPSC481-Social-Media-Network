@@ -10,10 +10,10 @@ interface PageHeaderProps {
 
 export function PageHeader({ user }: PageHeaderProps): JSX.Element {
   const navigate = useNavigate()
-  const location = useLocation();
+  const location = useLocation()
 
   // Check if the current route is the notifications page
-  const isOnNotificationsPage = location.pathname === NOTIFICATIONS_ROUTE;
+  const isOnNotificationsPage = location.pathname === NOTIFICATIONS_ROUTE
 
   return (
     <div className='flex items-center justify-between'>
