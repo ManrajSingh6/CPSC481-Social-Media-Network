@@ -12,7 +12,7 @@ export function MessagePage(): JSX.Element {
       </div>
       <div>
         {MOCK_MESSAGES.map((item) => {
-          return <MessageCard dm={item} key={item.id} />
+          return <MessageCard directMessage={item} key={item.id} />
         })}
       </div>
     </div>
