@@ -71,10 +71,10 @@ function LoginPage() {
         </p>
       </div>
       <br></br>
-      <div style={styles.lineWithText}>
-        <hr style={styles.hr} />
+      <div className="flex items-center justify-center w-full">
+        <hr className="border border-black w-full" />
         <span style={{ margin: 10 }}>or</span>
-        <hr style={styles.hr} />
+        <hr className="border border-black w-full" />
       </div>
       <br></br>
       <button
@@ -93,16 +93,3 @@ function LoginPage() {
 }
 
 export default LoginPage
-
-const styles = {
-  lineWithText: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: '100%'
-  },
-  hr: {
-    border: '1px solid black',
-    width: '100%'
-  }
-}
