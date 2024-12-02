@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { MOCK_CHATS, MOCK_NEW_USERS } from '../../utils/mockData'; // Import both existing and new users
 import ChatItemComp from '../../components/chatItem';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Heading } from '../../components/common/heading';
 
 export default function ChatPage() {
@@ -11,8 +11,10 @@ export default function ChatPage() {
 
   const [messages, setMessages] = useState(chat?.messages || []); // Use the existing messages if present, otherwise an empty array
   const [newMessage, setNewMessage] = useState("");
+  const messagesEndRef = useRef<HTMLDivElement>(null); // Reference to the bottom of the messages container
 
   const handleSendMessage = () => {
+
     if (newMessage.trim() === "") return;
 
     const newChatItem = {
@@ -29,12 +31,24 @@ export default function ChatPage() {
     }
     
     setNewMessage("");
+    scrollToBottom();
+  };
+
+  
+  const scrollToBottom = () => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   // If no chat exists, show a "start new chat" message
   if (!chat && !newUser) {
     return <div>User not found!</div>;
   }
+
+  useEffect(() => {
+    scrollToBottom(); // Scroll to the bottom when the component renders
+  }, []);
 
   return (
     <div className="flex flex-col h-[90%] bg-white border rounded-lg p-2">
@@ -58,6 +72,7 @@ export default function ChatPage() {
           ) : (
             <div className="text-center text-gray-500">Start the conversation by typing a message!</div>
           )}
+          <div ref={messagesEndRef}/>
         </div>
       </div>
 
