@@ -1,9 +1,9 @@
 import { ArrowLeft } from 'lucide-react'
-import { Button } from '../components/common/button'
-import { Heading } from '../components/common/heading'
-import { LabelValueItem } from '../components/common/labelValueItem'
+import { Button } from '../../components/common/button'
+import { Heading } from '../../components/common/heading'
+import { LabelValueItem } from '../../components/common/labelValueItem'
 import { useNavigate } from 'react-router-dom'
-import { SETTINGS_ROUTE } from '../utils/routes'
+import { SETTINGS_ROUTE } from '../../utils/routes'
 
 export function FAQPage(): JSX.Element {
   const navigate = useNavigate()

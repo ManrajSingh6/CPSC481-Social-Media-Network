@@ -64,3 +64,17 @@ export interface CustomNotification {
   readonly value1: string
   readonly value2: string
 }
+
+export interface ChatItem {
+  senderID: number
+  time: string
+  message: string
+}
+
+export interface Chat {
+  friend_id: number
+  friend_name: string
+  friend_pictureURL: string
+  user_pictureURL: string
+  messages: ChatItem[]
+}

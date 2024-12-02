@@ -1,7 +1,7 @@
-import { Heading } from '../components/common/heading'
-import { AddButton } from '../components/common/addButton'
-import MessageCard from '../components/messageCard'
-import { MOCK_MESSAGES } from '../utils/mockData'
+import { Heading } from '../../components/common/heading'
+import { AddButton } from '../../components/common/addButton'
+import MessageCard from '../../components/messageCard'
+import { MOCK_MESSAGES } from '../../utils/mockData'
 
 export function MessagePage(): JSX.Element {
   return (

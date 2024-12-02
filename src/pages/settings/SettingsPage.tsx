@@ -1,9 +1,9 @@
 import { useNavigate } from 'react-router-dom'
-import { CustomImage } from '../components/common/customImage'
-import { Heading } from '../components/common/heading'
-import SettingsItem from '../components/settingsItem'
-import { useUser } from '../context/userContext'
-import { MOCK_USER } from '../utils/mockData'
+import { CustomImage } from '../../components/common/customImage'
+import { Heading } from '../../components/common/heading'
+import SettingsItem from '../../components/settingsItem'
+import { useUser } from '../../context/userContext'
+import { MOCK_USER } from '../../utils/mockData'
 import {
   APP_UPDATES_ROUTE,
   FAQ_ROUTE,
@@ -12,7 +12,7 @@ import {
   PRIVACY_SAFETY_ROUTE,
   PROFILE_ROUTE,
   TERMS_AND_CONDITIONS_ROUTE
-} from '../utils/routes'
+} from '../../utils/routes'
 
 export default function SettingsPage(): JSX.Element {
   const { logout } = useUser()
