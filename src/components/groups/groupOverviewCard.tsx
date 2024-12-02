@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useUser } from '../../context/userContext'
 import { trimString } from '../../utils/formatting'
 import { Group } from '../../utils/types'
@@ -16,21 +17,21 @@ export function GroupOverviewCard({
 }: GroupOverviewCardProps): JSX.Element {
   const { user, enrollUserInGroupOrEvent, unenrollUserInGroupOrEvent } =
     useUser()
-
   // This shouldn't happen, but added for type safety
   if (!user) {
     return <></>
   }
-
-  // TODO: get these working
-  const isUserEnrolledInGroup = user.enrolledGroupIds.includes(group.id)
+  
+  const [enrolled, setEnrolled] = useState(user.enrolledGroupIds.includes(group.id))
 
   function handleJoinGroup(): void {
     enrollUserInGroupOrEvent(group.id, 'Group')
+    setEnrolled(true)
   }
 
   function handleLeaveGroup(): void {
     unenrollUserInGroupOrEvent(group.id, 'Group')
+    setEnrolled(false)
   }
 
   return (
@@ -48,12 +49,12 @@ export function GroupOverviewCard({
       </p>
       <div className='flex justify-end'>
         <Button
-          text={isUserEnrolledInGroup ? 'Leave' : 'Join'}
+          text={enrolled ? 'Leave' : 'Join'}
           onClick={() =>
-            isUserEnrolledInGroup ? handleLeaveGroup : handleJoinGroup()
+            enrolled ? handleLeaveGroup() : handleJoinGroup()
           }
           paddingValue='px-4 py-2'
-          variant={isUserEnrolledInGroup ? 'secondary' : 'primary'}
+          variant={enrolled ? 'secondary' : 'primary'}
         />
       </div>
     </div>

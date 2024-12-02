@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useUser } from '../../context/userContext'
 import { Event } from '../../utils/types'
 import { Button } from '../common/button'
@@ -19,15 +20,16 @@ export function EventOverviewCard({
     return <></>
   }
 
-  // TODO: get these working
-  const isUserEnrolledInEvent = user.enrolledEventIds.includes(event.id)
+  const [RSVP, setRSVP] = useState(user.enrolledEventIds.includes(event.id))
 
   function handleRSVP(): void {
     enrollUserInGroupOrEvent(event.id, 'Event')
+    setRSVP(true)
   }
 
   function handleCancelRSVP(): void {
     unenrollUserInGroupOrEvent(event.id, 'Event')
+    setRSVP(false)
   }
 
   return (
@@ -48,12 +50,12 @@ export function EventOverviewCard({
       </ul>
       <div className='flex justify-end'>
         <Button
-          text={isUserEnrolledInEvent ? 'Cancel RSVP' : 'RSVP'}
+          text={RSVP ? 'Cancel RSVP' : 'RSVP'}
           onClick={() =>
-            isUserEnrolledInEvent ? handleCancelRSVP : handleRSVP()
+            RSVP ? handleCancelRSVP() : handleRSVP()
           }
           paddingValue='px-4 py-2'
-          variant={isUserEnrolledInEvent ? 'secondary' : 'primary'}
+          variant={RSVP ? 'secondary' : 'primary'}
         />
       </div>
     </div>
