@@ -25,10 +25,11 @@ export function ButtonGroup({
 
   return (
     <div className={`${isTabGroup && 'w-full'}`}>
-      {label && <p className='text-header mb-1 text-sm'>{label}</p>}
-      <div
+      {/* {label && <p className='text-header mb-1 text-sm'>{label}</p>} */}
+      {/* <div
         className={`flex ${direction === 'row' ? 'h-10 flex-row' : 'flex-col'} ${isTabGroup ? 'gap-1 rounded-lg border bg-white p-1' : 'gap-2'}`}
-      >
+      > */}
+      <div className={'flex flex-row h-8 gap-2 max-w-content'}>
         {buttons.map((button, index) => {
           const isSelected = selectedIndex === index
           return (
@@ -39,7 +40,7 @@ export function ButtonGroup({
                 button.onClick()
               }}
               text={button.label}
-              customStyle={`${isSelected ? 'bg-gray-950 text-white' : 'bg-white'} text-xs border ${isTabGroup ? 'flex-grow' : ''} border-slate-200`}
+              customStyle={`${isSelected ? 'bg-gray-950 text-white' : 'bg-white'} text-xs border ${isTabGroup ? 'px-6' : ''} border-slate-200`}
             />
           )
         })}
