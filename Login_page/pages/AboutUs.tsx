@@ -3,6 +3,7 @@ import { Button } from '../components/common/button'
 import { Heading } from '../components/common/heading'
 import { LabelValueItem } from '../components/common/labelValueItem'
 import { useNavigate } from 'react-router-dom'
+import { SETTINGS_ROUTE } from '../utils/routes'
 import { ABOUT_US_ROUTE } from '../utils/routes'
 
 export function AboutUsPage(): JSX.Element {
