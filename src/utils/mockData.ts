@@ -5,7 +5,8 @@ import {
   Event,
   DirectMessage,
   CustomNotification,
-  Chat
+  Chat,
+  NewChatUser
 } from './types'
 
 export const MOCK_USER: User = {
@@ -287,5 +288,24 @@ export const MOCK_CHATS: Chat[] = [
         message: "It’s so good, I think you’ll love it."
       }
     ]
+  }
+];
+
+
+export const MOCK_NEW_USERS: NewChatUser[] = [
+  {
+    id: 4,
+    pictureURL: "https://avatar.iran.liara.run/public/4",
+    name: "Jane Doe"
+  },
+  {
+    id: 5,
+    pictureURL: "https://avatar.iran.liara.run/public/5",
+    name: "John Smith"
+  },
+  {
+    id: 6,
+    pictureURL: "https://avatar.iran.liara.run/public/6",
+    name: "Emily Zhang"
   }
 ];

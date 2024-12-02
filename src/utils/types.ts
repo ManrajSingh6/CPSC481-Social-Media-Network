@@ -15,6 +15,11 @@ export interface User {
   readonly enrolledEventIds: number[]
 }
 
+export interface NewChatUser {
+  id: number;
+  pictureURL: string;
+  name: string;
+} 
 export type GroupOrEvent = 'Group' | 'Event'
 
 export interface Group {

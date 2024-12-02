@@ -1,54 +1,63 @@
 import { useParams } from 'react-router-dom';
-import { MOCK_CHATS } from '../../utils/mockData';
+import { MOCK_CHATS, MOCK_NEW_USERS } from '../../utils/mockData'; // Import both existing and new users
 import ChatItemComp from '../../components/chatItem';
-import { InputField } from '../../components/common/inputField';
-import { Button } from '../../components/common/button';
 import { useState } from 'react';
 import { Heading } from '../../components/common/heading';
 
 export default function ChatPage() {
-  const { id } = useParams(); // Access the 'name' parameter from the URL
+  const { id } = useParams(); // Access the 'id' parameter from the URL
   const chat = MOCK_CHATS.find((chat) => chat.friend_id.toString() === id); // Find the chat for the given ID
-  
-  const [messages, setMessages] = useState(chat?.messages || []);
-  const [newMessage, setNewMessage] = useState("");
+  const newUser = MOCK_NEW_USERS.find((user) => user.id.toString() === id); // Find the user if it's a new chat
 
-  if (!chat) {
-    return <div>Chat not found!</div>; // If no chat found, show an error message
-  }
+  const [messages, setMessages] = useState(chat?.messages || []); // Use the existing messages if present, otherwise an empty array
+  const [newMessage, setNewMessage] = useState("");
 
   const handleSendMessage = () => {
     if (newMessage.trim() === "") return;
+
     const newChatItem = {
       senderID: 0,
       time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
       message: newMessage,
     };
-    setMessages([newChatItem, ...messages ]);
+
+    // For new chats, set the message state accordingly
+    if (!chat) {
+      setMessages([newChatItem]); // Start a new conversation
+    } else {
+      setMessages([newChatItem, ...messages]); // Add to the existing conversation
+    }
+    
     setNewMessage("");
   };
+
+  // If no chat exists, show a "start new chat" message
+  if (!chat && !newUser) {
+    return <div>User not found!</div>;
+  }
 
   return (
     <div className="flex flex-col h-[90%] bg-white border rounded-lg p-2">
       {/* Heading Section */}
       <div className="mb-4 pb-2 border-b">
-        <Heading headingText={chat.friend_name}/>
+        <Heading headingText={chat?.friend_name || newUser?.name || ""} />
       </div>
 
       {/* Scrollable Messages Section */}
-      <div className="flex-1 overflow-y-auto mb-4 scroll-"> {/* Scrollable messages */}
+      <div className="flex-1 overflow-y-auto mb-4"> {/* Scrollable messages */}
         <div className="space-y-4 p-2">
-        {messages
-          .slice()
-          .reverse()
-          .map((message, index) => (
-            <ChatItemComp 
-              chat={message} 
-              friendPicUrl={chat.friend_pictureURL} 
-              userPicUrl={chat.user_pictureURL} 
-              key={index}
-            />
-          ))}
+          {messages.length > 0 ? (
+            messages.slice().reverse().map((message, index) => (
+              <ChatItemComp 
+                chat={message} 
+                friendPicUrl={chat?.friend_pictureURL || newUser?.pictureURL || ""} 
+                userPicUrl="https://avatar.iran.liara.run/public/5" 
+                key={index}
+              />
+            ))
+          ) : (
+            <div className="text-center text-gray-500">Start the conversation by typing a message!</div>
+          )}
         </div>
       </div>
 
