@@ -1,10 +1,10 @@
 import { ArrowLeft } from 'lucide-react'
-import { Button } from '../components/common/button'
-import { Heading } from '../components/common/heading'
-import { LabelValueItem } from '../components/common/labelValueItem'
-import { useUser } from '../context/userContext'
+import { Button } from '../../components/common/button'
+import { Heading } from '../../components/common/heading'
+import { LabelValueItem } from '../../components/common/labelValueItem'
+import { useUser } from '../../context/userContext'
 import { useNavigate } from 'react-router-dom'
-import { SETTINGS_ROUTE } from '../utils/routes'
+import { SETTINGS_ROUTE } from '../../utils/routes'
 
 export function ProfilePage(): JSX.Element {
   const { user } = useUser()
