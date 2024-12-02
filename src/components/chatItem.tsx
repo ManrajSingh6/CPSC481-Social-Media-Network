@@ -21,7 +21,7 @@ export default function ChatItemComp( {chat, friendPicUrl, userPicUrl} : ChatIte
                     <p className="text-xs text-gray-600 mt-1">{chat.time}</p>
                 </div>
             :
-                <div className={'max-w-xs p-2 rounded-lg bg-blue-500'}>
+                <div className={'max-w-xs p-2 rounded-lg bg-gray-950'}>
                     <p className="text-sm text-white">{chat.message}</p>
                     <p className="text-xs text-white mt-1">{chat.time}</p>
                 </div>

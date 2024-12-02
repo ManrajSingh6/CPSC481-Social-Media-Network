@@ -21,14 +21,14 @@ export function Button({
 }: ButtonProps): JSX.Element {
   const variantStyles =
     !customStyle && variant === 'primary'
-      ? 'bg-gray-950 text-white hover:bg-gray-900'
+      ? 'bg-gray-950 text-white hover:bg-gray-500'
       : variant === 'secondary'
-        ? 'text-gray-950 border border-gray-950 bg-white hover:bg-gray-50'
+        ? 'text-gray-950 border border-gray-950 bg-white hover:bg-gray-200'
         : ''
 
   return (
     <button
-      className={`flex items-center justify-center gap-2 ${roundedValue} ${paddingValue} text-sm shadow-sm transition-all ${variantStyles} ${customStyle}`}
+      className={`flex items-center justify-center gap-2 ${roundedValue} ${paddingValue} text-sm shadow-sm transition-all duration-300 ease-in-out ${variantStyles} ${customStyle}`}
       onClick={onClick}
       disabled={disabled}
     >
