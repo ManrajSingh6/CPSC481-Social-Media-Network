@@ -7,5 +7,10 @@ import './index.css'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <App />
+<<<<<<< HEAD
   </StrictMode>,
 )
+=======
+  </StrictMode>
+)
+>>>>>>> main
