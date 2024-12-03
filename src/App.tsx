@@ -17,22 +17,26 @@ import {
   FAQ_ROUTE,
   PRIVACY_SAFETY_ROUTE,
   APP_UPDATES_ROUTE,
-  NOTIFCATON_SETTINGS_ROUTE
+  NOTIFCATON_SETTINGS_ROUTE,
+  CHAT_ROUTE,
+  NEW_CHAT_ROUTE
 } from './utils/routes'
 import { ProtectedRoute } from './components/protectedRoute.tsx'
 import { DiscoverPage } from './pages/DiscoverPage.tsx'
 import { Layout } from './pages/Layout.tsx'
 import { UserProvider } from './context/userContext.tsx'
 import { PhoneSilhouetteWrapper } from './pages/PhoneSilhoutteWrapper.tsx'
-import { MessagePage } from './pages/MessagePage.tsx'
-import SettingsPage from './pages/SettingsPage.tsx'
+import { MessagePage } from './pages/messages/MessagePage.tsx'
+import SettingsPage from './pages/settings/SettingsPage.tsx'
 import NotificationsPage from './pages/NotificationPage.tsx'
-import { ProfilePage } from './pages/ProfilePage.tsx'
-import { TermsAndConditionsPage } from './pages/TermsAndConditionsPage.tsx'
-import { FAQPage } from './pages/FAQPage.tsx'
-import { PrivacySafetyPage } from './pages/PrivacySafetyPage.tsx'
-import { AppUpdatesPage } from './pages/AppUpdatesPage.tsx'
+import { ProfilePage } from './pages/settings/ProfilePage.tsx'
+import { TermsAndConditionsPage } from './pages/settings/TermsAndConditionsPage.tsx'
+import { FAQPage } from './pages/settings/FAQPage.tsx'
+import { PrivacySafetyPage } from './pages/settings/PrivacySafetyPage.tsx'
+import { AppUpdatesPage } from './pages/settings/AppUpdatesPage.tsx'
 import { NotificationSettingsPage } from './pages/NotificationSettingsPage.tsx'
+import ChatPage from './pages/messages/ChatPage.tsx'
+import NewChatPage from './pages/messages/NewChatPage.tsx'
 
 function App() {
   return (
@@ -48,6 +52,8 @@ function App() {
               <Route path='/' element={<Layout />}>
                 <Route path={DISCOVER_ROUTE} element={<DiscoverPage />} />
                 <Route path={MESSAGES_ROUTE} element={<MessagePage />} />
+                <Route path={CHAT_ROUTE} element={<ChatPage />} />
+                <Route path={NEW_CHAT_ROUTE} element={<NewChatPage/>} />
                 <Route path={SETTINGS_ROUTE} element={<SettingsPage />} />
                 <Route
                   path={NOTIFICATIONS_ROUTE}

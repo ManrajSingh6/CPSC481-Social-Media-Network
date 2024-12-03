@@ -40,6 +40,16 @@ export function DiscoverPage(): JSX.Element {
         <Heading headingText='Discover' />
         <AddButton onClick={() => {}} />
       </div>
+      
+      <InputField
+        type='text'
+        label={`Search ${filterItem}s`}
+        placeholder={
+          filterItem === 'Group' ? 'eg. Baking' : 'eg. Fitness Bootcamp'
+        }
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
       <ButtonGroup
         label='Filter by'
         isTabGroup={true}
@@ -59,15 +69,6 @@ export function DiscoverPage(): JSX.Element {
             }
           }
         ]}
-      />
-      <InputField
-        type='text'
-        label={`Search ${filterItem}s`}
-        placeholder={
-          filterItem === 'Group' ? 'eg. Baking' : 'eg. Fitness Bootcamp'
-        }
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
       />
       {filteredDataBySearchTerm.map((item) => {
         return filterItem === 'Group' ? (
