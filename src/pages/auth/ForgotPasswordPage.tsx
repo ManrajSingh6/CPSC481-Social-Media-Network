@@ -1,5 +1,7 @@
 import '../../assets/styles.css'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { TERMS_AND_CONDITIONS_ROUTE } from '../../utils/routes'
+import { ABOUT_US_ROUTE } from '../../utils/routes'
 
 function ForgotPasswordPage() {
   const navigate = useNavigate()
@@ -38,8 +40,12 @@ function ForgotPasswordPage() {
         <button className='register-button'>Send Reset Link</button>
       </div>
       <div className='footer'>
-        <span>Terms & Conditions</span>
-        <span>About Us</span>
+        <Link to={TERMS_AND_CONDITIONS_ROUTE}>
+          Terms & Conditions
+        </Link>
+        <Link to={ABOUT_US_ROUTE}>
+          About Us
+        </Link>
       </div>
     </div>
   )

@@ -19,7 +19,8 @@ import {
   APP_UPDATES_ROUTE,
   NOTIFCATON_SETTINGS_ROUTE,
   CHAT_ROUTE,
-  NEW_CHAT_ROUTE
+  NEW_CHAT_ROUTE,
+  ABOUT_US_ROUTE
 } from './utils/routes'
 import { ProtectedRoute } from './components/protectedRoute.tsx'
 import { DiscoverPage } from './pages/DiscoverPage.tsx'
@@ -30,7 +31,8 @@ import { MessagePage } from './pages/messages/MessagePage.tsx'
 import SettingsPage from './pages/settings/SettingsPage.tsx'
 import NotificationsPage from './pages/NotificationPage.tsx'
 import { ProfilePage } from './pages/settings/ProfilePage.tsx'
-import { TermsAndConditionsPage } from './pages/settings/TermsAndConditionsPage.tsx'
+import { TermsAndConditionsPage } from './pages/TermsAndConditionsPage.tsx'
+import { AboutUsPage } from './pages/AboutUsPage.tsx'
 import { FAQPage } from './pages/settings/FAQPage.tsx'
 import { PrivacySafetyPage } from './pages/settings/PrivacySafetyPage.tsx'
 import { AppUpdatesPage } from './pages/settings/AppUpdatesPage.tsx'
@@ -48,6 +50,8 @@ function App() {
             <Route path={LOGIN_ROUTE} element={<LoginPage />} />
             <Route path={REGISTER_ROUTE} element={<RegisterPage />} />
             <Route path={FORGOT_ROUTE} element={<ForgotPasswordPage />} />
+            <Route path={TERMS_AND_CONDITIONS_ROUTE} element={<TermsAndConditionsPage />} />
+            <Route path={ABOUT_US_ROUTE} element={<AboutUsPage />} />
             <Route element={<ProtectedRoute />}>
               <Route path='/' element={<Layout />}>
                 <Route path={DISCOVER_ROUTE} element={<DiscoverPage />} />
@@ -64,10 +68,7 @@ function App() {
                   element={<NotificationSettingsPage />}
                 />
                 <Route path={PROFILE_ROUTE} element={<ProfilePage />} />
-                <Route
-                  path={TERMS_AND_CONDITIONS_ROUTE}
-                  element={<TermsAndConditionsPage />}
-                />
+                
                 <Route path={FAQ_ROUTE} element={<FAQPage />} />
                 <Route
                   path={PRIVACY_SAFETY_ROUTE}

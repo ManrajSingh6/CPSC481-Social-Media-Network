@@ -85,8 +85,12 @@ function LoginPage() {
         Register
       </button>
       <div className='footer'>
-        <span>Terms & Conditions</span>
-        <span>About Us</span>
+        <Link to='/terms-and-conditions'>
+          Terms & Conditions
+        </Link>
+        <Link to='/about-us'>
+          About Us
+        </Link>
       </div>
     </div>
   )
