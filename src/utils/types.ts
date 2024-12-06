@@ -16,10 +16,10 @@ export interface User {
 }
 
 export interface NewChatUser {
-  id: number;
-  pictureURL: string;
-  name: string;
-} 
+  id: number
+  pictureURL: string
+  name: string
+}
 export type GroupOrEvent = 'Group' | 'Event'
 
 export interface Group {

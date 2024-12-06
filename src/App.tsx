@@ -50,14 +50,17 @@ function App() {
             <Route path={LOGIN_ROUTE} element={<LoginPage />} />
             <Route path={REGISTER_ROUTE} element={<RegisterPage />} />
             <Route path={FORGOT_ROUTE} element={<ForgotPasswordPage />} />
-            <Route path={TERMS_AND_CONDITIONS_ROUTE} element={<TermsAndConditionsPage />} />
+            <Route
+              path={TERMS_AND_CONDITIONS_ROUTE}
+              element={<TermsAndConditionsPage />}
+            />
             <Route path={ABOUT_US_ROUTE} element={<AboutUsPage />} />
             <Route element={<ProtectedRoute />}>
               <Route path='/' element={<Layout />}>
                 <Route path={DISCOVER_ROUTE} element={<DiscoverPage />} />
                 <Route path={MESSAGES_ROUTE} element={<MessagePage />} />
                 <Route path={CHAT_ROUTE} element={<ChatPage />} />
-                <Route path={NEW_CHAT_ROUTE} element={<NewChatPage/>} />
+                <Route path={NEW_CHAT_ROUTE} element={<NewChatPage />} />
                 <Route path={SETTINGS_ROUTE} element={<SettingsPage />} />
                 <Route
                   path={NOTIFICATIONS_ROUTE}
@@ -68,7 +71,7 @@ function App() {
                   element={<NotificationSettingsPage />}
                 />
                 <Route path={PROFILE_ROUTE} element={<ProfilePage />} />
-                
+
                 <Route path={FAQ_ROUTE} element={<FAQPage />} />
                 <Route
                   path={PRIVACY_SAFETY_ROUTE}

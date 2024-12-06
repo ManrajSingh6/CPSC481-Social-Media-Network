@@ -13,7 +13,10 @@ export function TermsAndConditionsPage(): JSX.Element {
 
   return (
     <div className='flex flex-col gap-4'>
-      <Heading headingText='Terms and Conditions' subText='Please review our terms of service'/>
+      <Heading
+        headingText='Terms and Conditions'
+        subText='Please review our terms of service'
+      />
       <LabelValueItem label='Terms and Conditions' value={ToCString} />
       <Button
         text='Back to settings'

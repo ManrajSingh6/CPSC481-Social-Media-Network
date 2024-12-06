@@ -21,8 +21,10 @@ export function GroupOverviewCard({
   if (!user) {
     return <></>
   }
-  
-  const [enrolled, setEnrolled] = useState(user.enrolledGroupIds.includes(group.id))
+
+  const [enrolled, setEnrolled] = useState(
+    user.enrolledGroupIds.includes(group.id)
+  )
 
   function handleJoinGroup(): void {
     enrollUserInGroupOrEvent(group.id, 'Group')
@@ -50,9 +52,7 @@ export function GroupOverviewCard({
       <div className='flex justify-end'>
         <Button
           text={enrolled ? 'Leave' : 'Join'}
-          onClick={() =>
-            enrolled ? handleLeaveGroup() : handleJoinGroup()
-          }
+          onClick={() => (enrolled ? handleLeaveGroup() : handleJoinGroup())}
           paddingValue='px-4 py-2'
           variant={enrolled ? 'secondary' : 'primary'}
         />

@@ -40,12 +40,8 @@ function ForgotPasswordPage() {
         <button className='register-button'>Send Reset Link</button>
       </div>
       <div className='footer'>
-        <Link to={TERMS_AND_CONDITIONS_ROUTE}>
-          Terms & Conditions
-        </Link>
-        <Link to={ABOUT_US_ROUTE}>
-          About Us
-        </Link>
+        <Link to={TERMS_AND_CONDITIONS_ROUTE}>Terms & Conditions</Link>
+        <Link to={ABOUT_US_ROUTE}>About Us</Link>
       </div>
     </div>
   )

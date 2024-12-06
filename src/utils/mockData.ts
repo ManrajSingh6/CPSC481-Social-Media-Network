@@ -207,105 +207,108 @@ export const MOCK_NOTIFICATIONS: CustomNotification[] = [
 export const MOCK_CHATS: Chat[] = [
   {
     friend_id: 1,
-    friend_name: "Aubrey Graham",
-    friend_pictureURL: "https://avatar.iran.liara.run/public/1",
-    user_pictureURL: "https://avatar.iran.liara.run/public/5",
+    friend_name: 'Aubrey Graham',
+    friend_pictureURL: 'https://avatar.iran.liara.run/public/1',
+    user_pictureURL: 'https://avatar.iran.liara.run/public/5',
     messages: [
       {
         senderID: 1,
-        time: "4:23 PM",
-        message: "Thanks to your recipe!"
+        time: '4:23 PM',
+        message: 'Thanks to your recipe!'
       },
       {
         senderID: 2,
-        time: "4:21 PM",
-        message: "No problem! Glad you liked it. 😊"
+        time: '4:21 PM',
+        message: 'No problem! Glad you liked it. 😊'
       },
       {
         senderID: 1,
-        time: "4:18 PM",
-        message: "It turned out amazing! I didn’t know you could make such a great dish with just a few ingredients!"
+        time: '4:18 PM',
+        message:
+          'It turned out amazing! I didn’t know you could make such a great dish with just a few ingredients!'
       },
       {
         senderID: 2,
-        time: "4:15 PM",
-        message: "You just need the right spices! Trust me, it’s all in the seasoning. Let me know how it goes!"
+        time: '4:15 PM',
+        message:
+          'You just need the right spices! Trust me, it’s all in the seasoning. Let me know how it goes!'
       },
       {
         senderID: 1,
-        time: "4:10 PM",
-        message: "I’m thinking about making that pasta you mentioned. Got any tips?"
+        time: '4:10 PM',
+        message:
+          'I’m thinking about making that pasta you mentioned. Got any tips?'
       },
       {
         senderID: 2,
-        time: "4:09 PM",
-        message: "Of course! Here’s the recipe I use. It’s super simple, but trust me, it’s delicious!"
+        time: '4:09 PM',
+        message:
+          'Of course! Here’s the recipe I use. It’s super simple, but trust me, it’s delicious!'
       }
     ]
   },
   {
     friend_id: 2,
-    friend_name: "Sam Kim",
-    friend_pictureURL: "https://avatar.iran.liara.run/public/2",
-    user_pictureURL: "https://avatar.iran.liara.run/public/5",
+    friend_name: 'Sam Kim',
+    friend_pictureURL: 'https://avatar.iran.liara.run/public/2',
+    user_pictureURL: 'https://avatar.iran.liara.run/public/5',
     messages: [
       {
         senderID: 2,
-        time: "1:09 PM",
-        message: "Come by to my study session later"
+        time: '1:09 PM',
+        message: 'Come by to my study session later'
       },
       {
         senderID: 1,
-        time: "1:08 PM",
-        message: "Sounds good, I’ll try to make it!"
+        time: '1:08 PM',
+        message: 'Sounds good, I’ll try to make it!'
       },
       {
         senderID: 2,
-        time: "1:05 PM",
-        message: "I’ll be starting around 2 PM."
+        time: '1:05 PM',
+        message: 'I’ll be starting around 2 PM.'
       }
     ]
   },
   {
     friend_id: 3,
-    friend_name: "Luke Chiang",
-    friend_pictureURL: "https://avatar.iran.liara.run/public/3",
-    user_pictureURL: "https://avatar.iran.liara.run/public/5",
+    friend_name: 'Luke Chiang',
+    friend_pictureURL: 'https://avatar.iran.liara.run/public/3',
+    user_pictureURL: 'https://avatar.iran.liara.run/public/5',
     messages: [
       {
         senderID: 3,
-        time: "12:10 PM",
-        message: "Check out this song: ..."
+        time: '12:10 PM',
+        message: 'Check out this song: ...'
       },
       {
         senderID: 1,
-        time: "12:09 PM",
-        message: "I’ll listen to it after work!"
+        time: '12:09 PM',
+        message: 'I’ll listen to it after work!'
       },
       {
         senderID: 3,
-        time: "12:07 PM",
-        message: "It’s so good, I think you’ll love it."
+        time: '12:07 PM',
+        message: 'It’s so good, I think you’ll love it.'
       }
     ]
   }
-];
-
+]
 
 export const MOCK_NEW_USERS: NewChatUser[] = [
   {
     id: 4,
-    pictureURL: "https://avatar.iran.liara.run/public/4",
-    name: "Jane Doe"
+    pictureURL: 'https://avatar.iran.liara.run/public/4',
+    name: 'Jane Doe'
   },
   {
     id: 5,
-    pictureURL: "https://avatar.iran.liara.run/public/5",
-    name: "John Smith"
+    pictureURL: 'https://avatar.iran.liara.run/public/5',
+    name: 'John Smith'
   },
   {
     id: 6,
-    pictureURL: "https://avatar.iran.liara.run/public/6",
-    name: "Emily Zhang"
+    pictureURL: 'https://avatar.iran.liara.run/public/6',
+    name: 'Emily Zhang'
   }
-];
+]

@@ -16,7 +16,7 @@ export function LabelValueItem({
         <p className='text-header'>{value}</p>
       ) : (
         value
-      )}  
+      )}
     </div>
   )
 }

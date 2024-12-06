@@ -1,6 +1,10 @@
 import '../../assets/styles.css'
 import { Link, useNavigate } from 'react-router-dom'
-import { ABOUT_US_ROUTE, LOGIN_ROUTE, TERMS_AND_CONDITIONS_ROUTE } from '../../utils/routes'
+import {
+  ABOUT_US_ROUTE,
+  LOGIN_ROUTE,
+  TERMS_AND_CONDITIONS_ROUTE
+} from '../../utils/routes'
 
 function RegisterPage() {
   const navigate = useNavigate()
@@ -49,12 +53,8 @@ function RegisterPage() {
         </button>
       </div>
       <div className='footer'>
-      <Link to={TERMS_AND_CONDITIONS_ROUTE}>
-          Terms & Conditions
-        </Link>
-        <Link to={ABOUT_US_ROUTE}>
-          About Us
-        </Link>
+        <Link to={TERMS_AND_CONDITIONS_ROUTE}>Terms & Conditions</Link>
+        <Link to={ABOUT_US_ROUTE}>About Us</Link>
       </div>
     </div>
   )

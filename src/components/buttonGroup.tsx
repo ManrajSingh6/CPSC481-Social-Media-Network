@@ -29,7 +29,7 @@ export function ButtonGroup({
       {/* <div
         className={`flex ${direction === 'row' ? 'h-10 flex-row' : 'flex-col'} ${isTabGroup ? 'gap-1 rounded-lg border bg-white p-1' : 'gap-2'}`}
       > */}
-      <div className={'flex flex-row h-8 gap-2 max-w-content'}>
+      <div className={'max-w-content flex h-8 flex-row gap-2'}>
         {buttons.map((button, index) => {
           const isSelected = selectedIndex === index
           return (

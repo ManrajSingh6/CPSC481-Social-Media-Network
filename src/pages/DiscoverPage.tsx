@@ -40,7 +40,7 @@ export function DiscoverPage(): JSX.Element {
         <Heading headingText='Discover' />
         <AddButton onClick={() => {}} />
       </div>
-      
+
       <InputField
         type='text'
         label={`Search ${filterItem}s`}
