@@ -19,6 +19,7 @@ export const MOCK_USER: User = {
   enrolledEventIds: [3]
 }
 
+// TODO: Ensure each post has varied users, currently they are all the same
 export const MOCK_GROUPS: Group[] = [
   {
     id: 1,
@@ -31,14 +32,23 @@ export const MOCK_GROUPS: Group[] = [
         id: 1,
         title: 'Best Chocolate Chip Cookie Recipe',
         content:
-          'Here is a foolproof recipe for the best chocolate chip cookies!',
-        createdAt: new Date('2024-11-20T12:00:00Z')
+          'Chocolate chip cookies are a timeless treat that everyone loves. This recipe is designed to give you the perfect balance of crispy edges and chewy centers, ensuring every bite is pure bliss. The secret lies in the combination of brown sugar for that caramel flavor and a pinch of sea salt to elevate the sweetness. We’ll also cover tips on how to chill the dough for a richer taste and how to pick the best chocolate chips for maximum gooeyness. ',
+        createdAt: new Date('2024-11-20T12:00:00Z'),
+        imageUrl:
+          'https://assets.bonappetit.com/photos/5ca534485e96521ff23b382b/1:1/w_2560%2Cc_limit/chocolate-chip-cookie.jpg',
+        creator: MOCK_USER,
+        likeCount: 12
       },
       {
         id: 2,
         title: 'Sourdough Starter Guide',
-        content: 'A step-by-step guide to creating your own sourdough starter.',
-        createdAt: new Date('2024-11-20T12:00:00Z')
+        content:
+          'Creating your own sourdough starter is a rewarding process that connects you to the age-old tradition of breadmaking. This guide walks you through every step, from choosing the right flour to understanding the science behind natural fermentation. You’ll learn how to cultivate a starter with just flour and water, monitor its activity, and troubleshoot common issues like overly acidic smells or lack of bubbles. ',
+        createdAt: new Date('2024-11-20T12:00:00Z'),
+        imageUrl:
+          'https://littlespoonfarm.com/wp-content/uploads/2020/01/Sourdough-Bread-Recipe-for-Beginners.jpg',
+        creator: MOCK_USER,
+        likeCount: 16
       }
     ],
     createdAt: new Date('2024-11-10T09:00:00Z'),
@@ -56,14 +66,22 @@ export const MOCK_GROUPS: Group[] = [
         title: 'Top 10 Sports Cars of 2024',
         content:
           'Here’s a list of the top 10 sports cars you should check out this year. Let us know your favorites!',
-        createdAt: new Date('2024-11-18T15:00:00Z')
+        createdAt: new Date('2024-11-18T15:00:00Z'),
+        imageUrl:
+          'https://www.topgear.com/sites/default/files/2021/12/18.%20Koenigsegg%20Jesko.jpeg',
+        creator: MOCK_USER,
+        likeCount: 45
       },
       {
         id: 2,
         title: 'How to Maintain Your Car’s Engine',
         content:
           'An essential guide to keeping your car engine running smoothly for years to come.',
-        createdAt: new Date('2024-11-19T08:30:00Z')
+        createdAt: new Date('2024-11-19T08:30:00Z'),
+        imageUrl:
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGtjxCC2FTSxDmWvupgb_6xZNk39-TAJwsHQ&s',
+        creator: MOCK_USER,
+        likeCount: 20
       }
     ],
     createdAt: new Date('2024-11-05T14:00:00Z'),
@@ -81,14 +99,22 @@ export const MOCK_GROUPS: Group[] = [
         title: 'The Ultimate Guide to Pour-Over Coffee',
         content:
           'Learn how to make a perfect pour-over coffee with this detailed step-by-step guide.',
-        createdAt: new Date('2024-11-15T10:00:00Z')
+        createdAt: new Date('2024-11-15T10:00:00Z'),
+        imageUrl:
+          'https://assets.epicurious.com/photos/5542398605ebb68a358be62c/master/pass/EP-04162015-coffee-pour-small-6x4.jpg',
+        creator: MOCK_USER,
+        likeCount: 8
       },
       {
         id: 2,
         title: 'Top 5 Coffee Beans for Espresso',
         content:
           'Discover the best coffee beans to create a rich and creamy espresso at home.',
-        createdAt: new Date('2024-11-16T07:45:00Z')
+        createdAt: new Date('2024-11-16T07:45:00Z'),
+        imageUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/c/c5/Roasted_coffee_beans.jpg',
+        creator: MOCK_USER,
+        likeCount: 16
       }
     ],
     createdAt: new Date('2024-11-08T11:30:00Z'),

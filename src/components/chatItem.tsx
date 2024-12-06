@@ -1,4 +1,4 @@
-import { Chat, ChatItem } from '../utils/types'
+import { ChatItem } from '../utils/types'
 
 interface ChatItemCompProps {
   chat: ChatItem

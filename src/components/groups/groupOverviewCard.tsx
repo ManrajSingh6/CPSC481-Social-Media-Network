@@ -1,12 +1,11 @@
 import { useState } from 'react'
 import { useUser } from '../../context/userContext'
-import { trimString } from '../../utils/formatting'
+import { TRIM_LENGTH_CHARS, trimString } from '../../utils/formatting'
 import { Group } from '../../utils/types'
 import { Button } from '../common/button'
 import { CustomImage } from '../common/customImage'
 import { Heading } from '../common/heading'
-
-const TRIM_LENGTH_CHARS = 100
+import { useNavigate } from 'react-router-dom'
 
 interface GroupOverviewCardProps {
   readonly group: Group
@@ -17,6 +16,9 @@ export function GroupOverviewCard({
 }: GroupOverviewCardProps): JSX.Element {
   const { user, enrollUserInGroupOrEvent, unenrollUserInGroupOrEvent } =
     useUser()
+
+  const navigate = useNavigate()
+
   // This shouldn't happen, but added for type safety
   if (!user) {
     return <></>
@@ -37,7 +39,10 @@ export function GroupOverviewCard({
   }
 
   return (
-    <div className='cursor-pointer rounded-lg border bg-white p-2 transition-all'>
+    <div
+      className='cursor-pointer rounded-lg border bg-white p-2 transition-all'
+      onClick={() => navigate(`/group/${group.id}`)}
+    >
       <div className='flex items-center justify-between'>
         <Heading headingText={group.name} headingSize='medium' />
         <CustomImage

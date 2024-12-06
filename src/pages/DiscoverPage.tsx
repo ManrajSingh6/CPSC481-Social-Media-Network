@@ -70,13 +70,18 @@ export function DiscoverPage(): JSX.Element {
           }
         ]}
       />
-      {filteredDataBySearchTerm.map((item) => {
-        return filterItem === 'Group' ? (
-          <GroupOverviewCard group={item as Group} key={item.id} />
-        ) : (
-          <EventOverviewCard event={item as Event} key={item.id} />
-        )
-      })}
+
+      {filteredDataBySearchTerm.length > 0 ? (
+        filteredDataBySearchTerm.map((item) => {
+          return filterItem === 'Group' ? (
+            <GroupOverviewCard group={item as Group} key={item.id} />
+          ) : (
+            <EventOverviewCard event={item as Event} key={item.id} />
+          )
+        })
+      ) : (
+        <p className='text-gray-500'>No {filterItem}s found</p>
+      )}
     </div>
   )
 }

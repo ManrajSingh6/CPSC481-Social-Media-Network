@@ -11,9 +11,9 @@ export function LabelValueItem({
 }: LabelValueItemProps): JSX.Element {
   return (
     <div className={`flex flex-col gap-0.5 ${className}`}>
-      <p className='text-accentText text-sm font-semibold'>{label}</p>
+      <p className='text-sm font-semibold'>{label}</p>
       {typeof value === 'string' ? (
-        <p className='text-header'>{value}</p>
+        <p className='text-header text-gray-600'>{value}</p>
       ) : (
         value
       )}

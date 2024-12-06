@@ -10,16 +10,16 @@ interface IndividualButtonProps {
 
 interface ButtonGroupProps {
   readonly buttons: readonly IndividualButtonProps[]
-  readonly direction?: 'row' | 'column'
+  // readonly direction?: 'row' | 'column'
   readonly isTabGroup?: boolean
-  readonly label?: string
+  // readonly label?: string
 }
 
 export function ButtonGroup({
   buttons,
-  direction = 'row',
-  isTabGroup = false,
-  label
+  // direction = 'row',
+  isTabGroup = false
+  // label
 }: ButtonGroupProps): JSX.Element {
   const [selectedIndex, setSelectedIndex] = useState<number>(FIRST_ELEMENT)
 

@@ -60,7 +60,6 @@ export default function ChatPage() {
 
       {/* Scrollable Messages Section */}
       <div className='mb-4 flex-1 overflow-y-auto'>
-        {' '}
         {/* Scrollable messages */}
         <div className='space-y-4 p-2'>
           {messages.length > 0 ? (

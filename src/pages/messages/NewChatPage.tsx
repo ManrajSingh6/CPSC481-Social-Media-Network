@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { MOCK_CHATS, MOCK_NEW_USERS } from '../../utils/mockData'

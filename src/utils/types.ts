@@ -39,6 +39,8 @@ export interface GroupPost {
   readonly content: string
   readonly imageUrl?: string
   readonly createdAt: Date
+  readonly creator: User
+  readonly likeCount: number
 }
 
 export interface Event {

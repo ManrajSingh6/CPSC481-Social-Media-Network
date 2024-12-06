@@ -26,16 +26,14 @@ export function TermsAndConditionsPage(): JSX.Element {
         <Button
           text='Back'
           variant='secondary'
-          icon={<ArrowLeft />}
+          icon={<ArrowLeft className='w-5' />}
           onClick={() => navigate(-1)}
         />
       </div>
-
       <Heading
         headingText='Terms & Conditions'
         subText='Please read our terms of service'
       />
-
       <div className='flex-grow space-y-6'>
         <LabelValueItem
           label='Acceptance of Terms'
