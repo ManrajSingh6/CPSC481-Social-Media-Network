@@ -51,7 +51,6 @@ export function DiscoverPage(): JSX.Element {
         onChange={(e) => setSearchTerm(e.target.value)}
       />
       <ButtonGroup
-        label='Filter by'
         isTabGroup={true}
         buttons={[
           {

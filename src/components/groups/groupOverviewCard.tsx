@@ -39,11 +39,11 @@ export function GroupOverviewCard({
   }
 
   return (
-    <div
-      className='cursor-pointer rounded-lg border bg-white p-2 transition-all'
-      onClick={() => navigate(`/group/${group.id}`)}
-    >
-      <div className='flex items-center justify-between'>
+    <div className='rounded-lg border bg-white p-2 transition-all'>
+      <div
+        className='flex cursor-pointer items-center justify-between'
+        onClick={() => navigate(`/group/${group.id}`)}
+      >
         <Heading headingText={group.name} headingSize='medium' />
         <CustomImage
           src={group.creator.profilePicUrl}
