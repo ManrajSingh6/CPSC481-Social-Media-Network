@@ -51,7 +51,11 @@ export function SpecificGroupPage(): JSX.Element {
           <div className='space-y-4'>
             {groupInformation.posts.map((post) => {
               return (
-                <PostOverviewCard post={post} groupId={groupInformation.id} />
+                <PostOverviewCard
+                  key={post.id}
+                  post={post}
+                  groupId={groupInformation.id}
+                />
               )
             })}
           </div>

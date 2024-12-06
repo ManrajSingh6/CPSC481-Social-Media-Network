@@ -8,6 +8,9 @@ import { CustomImage } from '../../components/common/customImage'
 import { Button } from '../../components/common/button'
 import { ArrowLeft } from 'lucide-react'
 import { LikeDislikeButtonSet } from '../../components/common/likeDislikeButtonSet'
+import { Comment } from '../../utils/types'
+import { useUser } from '../../context/userContext'
+import { CommentSection } from '../../components/common/commentSection'
 
 type SpecificGroupPostParams = {
   readonly groupId: string
@@ -17,8 +20,9 @@ type SpecificGroupPostParams = {
 export function SpecificGroupPostPage(): JSX.Element {
   const navigate = useNavigate()
   const { groupId, postId } = useParams<SpecificGroupPostParams>()
+  const { user } = useUser()
 
-  const [isLiked, setIsLiked] = useState(false)
+  const [isLiked, setIsLiked] = useState(() => Math.random() < 0.5)
 
   if (!groupId || !postId) {
     return <Navigate to={DISCOVER_ROUTE} />
@@ -41,9 +45,31 @@ export function SpecificGroupPostPage(): JSX.Element {
     return <Navigate to={`/group/${groupInformation.id}`} />
   }
 
+  const [postComments, setPostComments] = useState<readonly Comment[]>(
+    postInformation.comments
+  )
+
+  const [commentInput, setCommentInput] = useState('')
+
   const likeCount = isLiked
     ? postInformation.likeCount + 1
     : postInformation.likeCount
+
+  function onAddComment(): void {
+    if (commentInput.trim() === '' || !user) {
+      return
+    }
+
+    const newComment: Comment = {
+      id: postComments.length + 1,
+      content: commentInput,
+      creator: user,
+      createdAt: new Date() // Now
+    }
+
+    setPostComments((prev) => [...prev, newComment])
+    setCommentInput('')
+  }
 
   return (
     <div className='flex flex-col gap-2'>
@@ -74,6 +100,12 @@ export function SpecificGroupPostPage(): JSX.Element {
         onDislike={() => setIsLiked(false)}
         isLiked={isLiked}
         isDisliked={!isLiked}
+      />
+      <CommentSection
+        commentInput={commentInput}
+        comments={postComments}
+        setCommentInput={setCommentInput}
+        onAddComment={onAddComment}
       />
     </div>
   )
