@@ -15,7 +15,7 @@ function LoginPage() {
   const navigate = useNavigate()
 
   // TODO: Implement login functionality with setLoginData
-  const [loginData, setLoginData] = useState<LoginData>({
+  const [loginData] = useState<LoginData>({
     username: MOCK_USER.username,
     password: MOCK_USER.password
   })
