@@ -41,7 +41,6 @@ export interface Comment {
   readonly createdAt: Date
 }
 
-// TODO: add more fields to each post like likes, comments etc.
 export interface GroupPost {
   readonly id: number
   readonly title: string
@@ -62,6 +61,9 @@ export interface Event {
   readonly duration: EventDuration
   readonly creator: User
   readonly type: GroupOrEvent
+  readonly likeCount: number
+  readonly imageUrl?: string
+  readonly comments: readonly Comment[]
 }
 
 export interface DirectMessage {

@@ -42,10 +42,15 @@ export function SpecificGroupPage(): JSX.Element {
         <AddButton onClick={() => {}} />
       </div>
       <LabelValueItem
+        label='Created By'
+        value={`${groupInformation.creator.fullName} (${groupInformation.creator.username})`}
+      />
+      <LabelValueItem
         label='Group Description'
         value={groupInformation.description}
       />
       <LabelValueItem
+        className='mt-2'
         label='Posts'
         value={
           <div className='space-y-4'>

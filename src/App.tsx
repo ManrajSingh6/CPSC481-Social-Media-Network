@@ -22,7 +22,8 @@ import {
   NEW_CHAT_ROUTE,
   ABOUT_US_ROUTE,
   SPECIFIC_GROUP_ROUTE,
-  SPECIFIC_GROUP_POST_ROUTE
+  SPECIFIC_GROUP_POST_ROUTE,
+  SPECIFIC_EVENT_ROUTE
 } from './utils/routes'
 import { ProtectedRoute } from './components/protectedRoute.tsx'
 import { DiscoverPage } from './pages/DiscoverPage.tsx'
@@ -43,6 +44,7 @@ import ChatPage from './pages/messages/ChatPage.tsx'
 import NewChatPage from './pages/messages/NewChatPage.tsx'
 import { SpecificGroupPage } from './pages/groups/SpecificGroupPage.tsx'
 import { SpecificGroupPostPage } from './pages/groups/SpecificGroupPostPage.tsx'
+import { SpecificEventPage } from './pages/events/SpecificEventPage.tsx'
 
 function App() {
   return (
@@ -71,6 +73,10 @@ function App() {
                 <Route
                   path={SPECIFIC_GROUP_POST_ROUTE}
                   element={<SpecificGroupPostPage />}
+                />
+                <Route
+                  path={SPECIFIC_EVENT_ROUTE}
+                  element={<SpecificEventPage />}
                 />
                 <Route path={NEW_CHAT_ROUTE} element={<NewChatPage />} />
                 <Route path={SETTINGS_ROUTE} element={<SettingsPage />} />

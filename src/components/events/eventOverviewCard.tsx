@@ -4,6 +4,7 @@ import { Event } from '../../utils/types'
 import { Button } from '../common/button'
 import { CustomImage } from '../common/customImage'
 import { Heading } from '../common/heading'
+import { useNavigate } from 'react-router-dom'
 
 interface EventOverviewCardProps {
   readonly event: Event
@@ -12,6 +13,7 @@ interface EventOverviewCardProps {
 export function EventOverviewCard({
   event
 }: EventOverviewCardProps): JSX.Element {
+  const navigate = useNavigate()
   const { user, enrollUserInGroupOrEvent, unenrollUserInGroupOrEvent } =
     useUser()
 
@@ -34,7 +36,10 @@ export function EventOverviewCard({
 
   return (
     <div className='rounded-lg border border-blue-400 bg-white p-2 transition-all'>
-      <div className='mb-2 flex cursor-pointer items-center justify-between'>
+      <div
+        className='mb-2 flex cursor-pointer items-center justify-between'
+        onClick={() => navigate(`/event/${event.id}`)}
+      >
         <Heading headingText={event.name} headingSize='medium' />
         <CustomImage
           src={event.creator.profilePicUrl}

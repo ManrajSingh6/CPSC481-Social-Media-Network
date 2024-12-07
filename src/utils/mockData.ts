@@ -339,8 +339,26 @@ export const MOCK_EVENTS: Event[] = [
     location: 'Community Hall',
     date: new Date('2024-12-01T10:00:00Z'),
     duration: EventDuration.TwoHours,
-    creator: MOCK_USER,
-    type: 'Event'
+    creator: MOCK_USERS[2],
+    type: 'Event',
+    likeCount: 12,
+    imageUrl:
+      'https://thebakersjunction.com/wp-content/uploads/2024/06/DALL%C2%B7E-2024-06-24-21.30.23-A-lively-scene-of-a-baking-workshop-in-a-bright-well-lit-kitchen.-The-instructor-is-demonstrating-a-baking-technique-to-a-group-of-enthusiastic-parti.webp',
+    comments: [
+      {
+        id: 1,
+        content:
+          'I’m so excited to learn baking techniques from professionals!',
+        creator: MOCK_USERS[5],
+        createdAt: new Date(Date.now() - 6 * 60 * 60 * 1000) // 6 hours ago
+      },
+      {
+        id: 2,
+        content: 'Can we bring our own utensils to the workshop?',
+        creator: MOCK_USERS[7],
+        createdAt: new Date(Date.now() - 3 * 60 * 60 * 1000) // 3 hours ago
+      }
+    ]
   },
   {
     id: 2,
@@ -350,8 +368,25 @@ export const MOCK_EVENTS: Event[] = [
     location: 'Central Park',
     date: new Date('2024-12-05T15:00:00Z'),
     duration: EventDuration.Hour,
-    creator: MOCK_USER,
-    type: 'Event'
+    creator: MOCK_USERS[8],
+    type: 'Event',
+    likeCount: 18,
+    imageUrl:
+      'https://i0.wp.com/nicolesy.com/wp-content/uploads/2010/07/WWPhotowalk-67-Edit.jpg?fit=2500%2C1673&ssl=1',
+    comments: [
+      {
+        id: 1,
+        content: 'Is there a meetup point for the walk?',
+        creator: MOCK_USERS[1],
+        createdAt: new Date(Date.now() - 8 * 60 * 60 * 1000) // 8 hours ago
+      },
+      {
+        id: 2,
+        content: 'This is a great opportunity to learn photography tips!',
+        creator: MOCK_USERS[6],
+        createdAt: new Date(Date.now() - 2 * 60 * 60 * 1000) // 2 hours ago
+      }
+    ]
   },
   {
     id: 3,
@@ -361,8 +396,25 @@ export const MOCK_EVENTS: Event[] = [
     location: 'Downtown Gym',
     date: new Date('2024-12-10T08:00:00Z'),
     duration: EventDuration.Day,
-    creator: MOCK_USER,
-    type: 'Event'
+    creator: MOCK_USERS[4],
+    type: 'Event',
+    likeCount: 25,
+    imageUrl:
+      'https://cdn.webshopapp.com/shops/281654/files/377244341/the-advantages-of-boot-camp.jpg',
+    comments: [
+      {
+        id: 1,
+        content: 'Do we need to bring our own mats?',
+        creator: MOCK_USERS[9],
+        createdAt: new Date(Date.now() - 5 * 60 * 60 * 1000) // 5 hours ago
+      },
+      {
+        id: 2,
+        content: 'I’ve heard this bootcamp is intense but rewarding!',
+        creator: MOCK_USERS[0],
+        createdAt: new Date(Date.now() - 1 * 60 * 60 * 1000) // 1 hour ago
+      }
+    ]
   }
 ]
 
