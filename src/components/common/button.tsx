@@ -28,7 +28,7 @@ export function Button({
 
   return (
     <button
-      className={`flex items-center justify-center gap-2 ${roundedValue} ${paddingValue} text-sm shadow-sm transition-all duration-300 ease-in-out ${variantStyles} ${customStyle}`}
+      className={`flex items-center justify-center gap-2 ${roundedValue} ${paddingValue} text-sm shadow-sm transition-all duration-300 ease-in-out ${variantStyles} ${customStyle} ${disabled ? 'cursor-not-allowed opacity-70 disabled:hover:bg-gray-950' : 'cursor-pointer'}`}
       onClick={onClick}
       disabled={disabled}
     >

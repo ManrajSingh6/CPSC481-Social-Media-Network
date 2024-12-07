@@ -33,8 +33,8 @@ export function Modal({
   subHeader,
   content,
   onClose,
-  showCloseButton = true,
-  width = 'w-[90%] md:max-w-lg',
+  showCloseButton = false,
+  width = 'max-w-xs',
   minWidth,
   bottomButtons
 }: ModalProps): JSX.Element {
@@ -45,14 +45,16 @@ export function Modal({
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className={`${width} ${minWidth}`}>
+      <DialogContent
+        className={`absolute ${width} ${minWidth} rounded-lg bg-white p-4 shadow-lg`}
+      >
         <DialogHeader>
           <DialogTitle className='text-header text-left'>{header}</DialogTitle>
           <DialogDescription className='text-accentText text-left'>
             {subHeader}
           </DialogDescription>
         </DialogHeader>
-        {content && <div className='mb-2 mt-2'>{content}</div>}
+        {content && <div className='mb-2'>{content}</div>}
         {enhancedBottomButtons?.length > 0 && (
           <div className='flex items-center justify-end gap-2'>
             {enhancedBottomButtons.map((button, idx) => {

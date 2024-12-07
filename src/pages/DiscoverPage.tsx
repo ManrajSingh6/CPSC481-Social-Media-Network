@@ -12,35 +12,54 @@ import {
 import { ButtonGroup } from '../components/buttonGroup'
 import { EventOverviewCard } from '../components/events/eventOverviewCard'
 import { Event, Group, GroupOrEvent } from '../utils/types'
-
-const MOCK_GROUPS_SORTED_DATE_DESC = sortGroupsByCreatedAtDateDesc(MOCK_GROUPS) // Sorted by the date the group was created
-const MOCK_EVENTS_SORTED_DATE_DESC = sortEventsByDateDesc(MOCK_EVENTS) // Sorted by the actual event's date
-
-const MOCK_DATA = [
-  ...MOCK_GROUPS_SORTED_DATE_DESC,
-  ...MOCK_EVENTS_SORTED_DATE_DESC
-]
+import { CreateGroupEventModal } from '@/components/modals/createGroupEventModal'
+import { useUser } from '@/context/userContext'
+import { Navigate } from 'react-router-dom'
+import { LOGIN_ROUTE } from '@/utils/routes'
 
 export function DiscoverPage(): JSX.Element {
+  const { user } = useUser()
+
+  if (!user) {
+    return <Navigate to={LOGIN_ROUTE} />
+  }
+
   const [filterItem, setFilterItem] = useState<GroupOrEvent>('Group')
   const [searchTerm, setSearchTerm] = useState('')
 
-  const filteredDataByItem = MOCK_DATA.filter(
-    (item) => item.type === filterItem
-  )
+  const [mockGroups, setMockGroups] = useState(MOCK_GROUPS)
+  const [mockEvents, setMockEvents] = useState(MOCK_EVENTS)
+
+  const mockGroupsSortedDateDesc = sortGroupsByCreatedAtDateDesc(mockGroups)
+  const mockEventsSortedDateDesc = sortEventsByDateDesc(mockEvents)
+
+  const mockData = [...mockGroupsSortedDateDesc, ...mockEventsSortedDateDesc]
+
+  const [createModalOpen, setCreateModalOpen] = useState(false)
+
+  const filteredDataByItem = mockData.filter((item) => item.type === filterItem)
 
   const filteredDataBySearchTerm = filterGroupsEventsBySearchTerm(
     filteredDataByItem,
     searchTerm
   )
 
+  function handleCreateGroupSubmit(newGroup: Group): void {
+    setMockGroups((prev) => [...prev, newGroup])
+    setCreateModalOpen(false)
+  }
+
+  function handleCreateEventSubmit(newEvent: Event): void {
+    setMockEvents((prev) => [...prev, newEvent])
+    setCreateModalOpen(false)
+  }
+
   return (
     <div className='flex flex-col gap-4'>
       <div className='flex items-center justify-between'>
         <Heading headingText='Discover' />
-        <AddButton onClick={() => {}} />
+        <AddButton onClick={() => setCreateModalOpen(true)} />
       </div>
-
       <InputField
         type='text'
         label={`Search ${filterItem}s`}
@@ -69,7 +88,13 @@ export function DiscoverPage(): JSX.Element {
           }
         ]}
       />
-
+      <CreateGroupEventModal
+        isOpen={createModalOpen}
+        onClose={() => setCreateModalOpen(false)}
+        onGroupSubmit={handleCreateGroupSubmit}
+        onEventSubmit={handleCreateEventSubmit}
+        user={user}
+      />
       {filteredDataBySearchTerm.length > 0 ? (
         filteredDataBySearchTerm.map((item) => {
           return filterItem === 'Group' ? (

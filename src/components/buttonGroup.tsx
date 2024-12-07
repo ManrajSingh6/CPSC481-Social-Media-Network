@@ -10,22 +10,20 @@ interface IndividualButtonProps {
 
 interface ButtonGroupProps {
   readonly buttons: readonly IndividualButtonProps[]
-  // readonly direction?: 'row' | 'column'
   readonly isTabGroup?: boolean
-  // readonly label?: string
+  readonly label?: string
 }
 
 export function ButtonGroup({
   buttons,
-  // direction = 'row',
-  isTabGroup = false
-  // label
+  isTabGroup = false,
+  label
 }: ButtonGroupProps): JSX.Element {
   const [selectedIndex, setSelectedIndex] = useState<number>(FIRST_ELEMENT)
 
   return (
     <div className={`${isTabGroup && 'w-full'}`}>
-      {/* {label && <p className='text-header mb-1 text-sm'>{label}</p>} */}
+      {label && <p className='text-header mb-1 text-sm'>{label}</p>}
       {/* <div
         className={`flex ${direction === 'row' ? 'h-10 flex-row' : 'flex-col'} ${isTabGroup ? 'gap-1 rounded-lg border bg-white p-1' : 'gap-2'}`}
       > */}
