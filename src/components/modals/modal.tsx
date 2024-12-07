@@ -46,7 +46,7 @@ export function Modal({
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent
-        className={`absolute ${width} ${minWidth} rounded-lg bg-white p-2 shadow-lg`}
+        className={`absolute ${width} ${minWidth} block rounded-lg bg-white p-4 shadow-lg`}
       >
         <DialogHeader>
           <DialogTitle className='text-header text-left'>{header}</DialogTitle>
