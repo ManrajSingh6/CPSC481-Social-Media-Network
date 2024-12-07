@@ -11,6 +11,8 @@ import { MOCK_EVENTS } from '../../utils/mockData'
 import { Heading } from '../../components/common/heading'
 import { useState } from 'react'
 import { Comment } from '../../utils/types'
+import { useToast } from '@/hooks/use-toast'
+import { ONE_SECOND } from '@/components/ui/toast'
 
 type SpecificEventPostParams = {
   readonly eventId: string
@@ -20,6 +22,7 @@ export function SpecificEventPage(): JSX.Element {
   const navigate = useNavigate()
   const { eventId } = useParams<SpecificEventPostParams>()
   const { user } = useUser()
+  const { toast } = useToast()
 
   const [isLiked, setIsLiked] = useState(() => Math.random() < 0.5)
 
@@ -76,7 +79,13 @@ export function SpecificEventPage(): JSX.Element {
           variant='secondary'
           icon={<Share className='w-5' />}
           text='Share'
-          onClick={() => {}}
+          onClick={() =>
+            toast({
+              title: `Shared Event: ${eventInformation.name}`,
+              description: 'Event shared successfully',
+              duration: ONE_SECOND
+            })
+          }
         />
       </div>
       {eventInformation.imageUrl && (

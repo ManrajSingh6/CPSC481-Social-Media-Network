@@ -45,6 +45,7 @@ import NewChatPage from './pages/messages/NewChatPage.tsx'
 import { SpecificGroupPage } from './pages/groups/SpecificGroupPage.tsx'
 import { SpecificGroupPostPage } from './pages/groups/SpecificGroupPostPage.tsx'
 import { SpecificEventPage } from './pages/events/SpecificEventPage.tsx'
+import { Toaster } from './components/ui/toaster.tsx'
 
 function App() {
   return (
@@ -100,6 +101,7 @@ function App() {
           </Routes>
         </Router>
       </UserProvider>
+      <Toaster />
     </PhoneSilhouetteWrapper>
   )
 }
