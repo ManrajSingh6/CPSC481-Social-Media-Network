@@ -34,7 +34,7 @@ export function Modal({
   content,
   onClose,
   showCloseButton = false,
-  width = 'max-w-xs',
+  width = 'max-w-[350px]',
   minWidth,
   bottomButtons
 }: ModalProps): JSX.Element {
@@ -46,7 +46,7 @@ export function Modal({
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent
-        className={`absolute ${width} ${minWidth} rounded-lg bg-white p-4 shadow-lg`}
+        className={`absolute ${width} ${minWidth} rounded-lg bg-white p-2 shadow-lg`}
       >
         <DialogHeader>
           <DialogTitle className='text-header text-left'>{header}</DialogTitle>

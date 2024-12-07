@@ -81,9 +81,11 @@ export function CreateGroupEventModal({
   return (
     <Modal
       isOpen={isOpen}
-      onClose={onClose}
+      onClose={() => {
+        onClose()
+        setSelectedTab('Group')
+      }}
       header={`Create ${selectedTab}`}
-      subHeader='Fill in the details below to get started'
       content={
         <div className='flex flex-col gap-4'>
           <ButtonGroup

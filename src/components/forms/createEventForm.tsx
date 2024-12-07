@@ -3,6 +3,7 @@ import { Button } from '../common/button'
 import { EventDuration } from '@/utils/types'
 import { DatePicker } from '../common/datePicker'
 import { Dropdown, DropdownOption } from '../common/dropdown'
+import { LabelValueItem } from '../common/labelValueItem'
 
 export interface CreateEventFormData {
   readonly name: string
@@ -95,6 +96,19 @@ export function CreateEventForm({
         }}
         minDate={new Date()}
       />
+      <LabelValueItem
+        label='Image (optional)'
+        value={
+          <input
+            type='file'
+            id='avatar'
+            name='avatar'
+            accept='image/png, image/jpeg'
+            style={{ padding: '2px' }}
+          />
+        }
+      />
+
       <Button
         variant='primary'
         text='Create Event'
