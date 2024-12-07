@@ -21,7 +21,7 @@ export function TermsAndConditionsPage(): JSX.Element {
   }
 
   return (
-    <div className='flex h-full flex-col overflow-y-auto p-4'>
+    <div className='no-scrollbar flex h-full flex-col overflow-y-auto p-4'>
       <div className='mb-4'>
         <Button
           text='Back'
