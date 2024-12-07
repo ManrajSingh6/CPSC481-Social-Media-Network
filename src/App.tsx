@@ -1,5 +1,5 @@
 import './assets/styles.css'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import { Navigate } from 'react-router-dom'
 import LoginPage from './pages/auth/LoginPage.tsx'
 import RegisterPage from './pages/auth/RegisterPage.tsx'
@@ -21,6 +21,8 @@ import {
   CHAT_ROUTE,
   NEW_CHAT_ROUTE,
   ABOUT_US_ROUTE,
+  SPECIFIC_GROUP_ROUTE,
+  SPECIFIC_GROUP_POST_ROUTE,
   EVENT_ROUTE
 } from './utils/routes'
 import { ProtectedRoute } from './components/protectedRoute.tsx'
@@ -40,6 +42,8 @@ import { AppUpdatesPage } from './pages/settings/AppUpdatesPage.tsx'
 import { NotificationSettingsPage } from './pages/NotificationSettingsPage.tsx'
 import ChatPage from './pages/messages/ChatPage.tsx'
 import NewChatPage from './pages/messages/NewChatPage.tsx'
+import { SpecificGroupPage } from './pages/groups/SpecificGroupPage.tsx'
+import { SpecificGroupPostPage } from './pages/groups/SpecificGroupPostPage.tsx'
 import EventPage from './pages/EventPage.tsx'
 
 function App() {
@@ -52,14 +56,25 @@ function App() {
             <Route path={LOGIN_ROUTE} element={<LoginPage />} />
             <Route path={REGISTER_ROUTE} element={<RegisterPage />} />
             <Route path={FORGOT_ROUTE} element={<ForgotPasswordPage />} />
-            <Route path={TERMS_AND_CONDITIONS_ROUTE} element={<TermsAndConditionsPage />} />
+            <Route
+              path={TERMS_AND_CONDITIONS_ROUTE}
+              element={<TermsAndConditionsPage />}
+            />
             <Route path={ABOUT_US_ROUTE} element={<AboutUsPage />} />
             <Route element={<ProtectedRoute />}>
               <Route path='/' element={<Layout />}>
                 <Route path={DISCOVER_ROUTE} element={<DiscoverPage />} />
                 <Route path={MESSAGES_ROUTE} element={<MessagePage />} />
                 <Route path={CHAT_ROUTE} element={<ChatPage />} />
-                <Route path={NEW_CHAT_ROUTE} element={<NewChatPage/>} />
+                <Route
+                  path={SPECIFIC_GROUP_ROUTE}
+                  element={<SpecificGroupPage />}
+                />
+                <Route
+                  path={SPECIFIC_GROUP_POST_ROUTE}
+                  element={<SpecificGroupPostPage />}
+                />
+                <Route path={NEW_CHAT_ROUTE} element={<NewChatPage />} />
                 <Route path={SETTINGS_ROUTE} element={<SettingsPage />} />
                 <Route
                   path={NOTIFICATIONS_ROUTE}
@@ -70,7 +85,6 @@ function App() {
                   element={<NotificationSettingsPage />}
                 />
                 <Route path={PROFILE_ROUTE} element={<ProfilePage />} />
-                
                 <Route path={FAQ_ROUTE} element={<FAQPage />} />
                 <Route
                   path={PRIVACY_SAFETY_ROUTE}

@@ -20,7 +20,8 @@ export function PageHeader({ user }: PageHeaderProps): JSX.Element {
         to={NOTIFICATIONS_ROUTE}
         className={({ isActive }) =>
           `font-bold ${isActive ? `text-black-500 font-bold` : 'text-gray-600'}`
-      }>
+        }
+      >
         <Bell />
       </NavLink>
     </div>

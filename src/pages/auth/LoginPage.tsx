@@ -15,7 +15,7 @@ function LoginPage() {
   const navigate = useNavigate()
 
   // TODO: Implement login functionality with setLoginData
-  const [loginData, setLoginData] = useState<LoginData>({
+  const [loginData] = useState<LoginData>({
     username: MOCK_USER.username,
     password: MOCK_USER.password
   })
@@ -71,10 +71,10 @@ function LoginPage() {
         </p>
       </div>
       <br></br>
-      <div className="flex items-center justify-center w-full">
-        <hr className="border border-black w-full" />
+      <div className='flex w-full items-center justify-center'>
+        <hr className='w-full border border-black' />
         <span style={{ margin: 10 }}>or</span>
-        <hr className="border border-black w-full" />
+        <hr className='w-full border border-black' />
       </div>
       <br></br>
       <button
@@ -85,12 +85,8 @@ function LoginPage() {
         Register
       </button>
       <div className='footer'>
-        <Link to='/terms-and-conditions'>
-          Terms & Conditions
-        </Link>
-        <Link to='/about-us'>
-          About Us
-        </Link>
+        <Link to='/terms-and-conditions'>Terms & Conditions</Link>
+        <Link to='/about-us'>About Us</Link>
       </div>
     </div>
   )

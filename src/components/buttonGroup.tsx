@@ -10,16 +10,16 @@ interface IndividualButtonProps {
 
 interface ButtonGroupProps {
   readonly buttons: readonly IndividualButtonProps[]
-  readonly direction?: 'row' | 'column'
+  // readonly direction?: 'row' | 'column'
   readonly isTabGroup?: boolean
-  readonly label?: string
+  // readonly label?: string
 }
 
 export function ButtonGroup({
   buttons,
-  direction = 'row',
-  isTabGroup = false,
-  label
+  // direction = 'row',
+  isTabGroup = false
+  // label
 }: ButtonGroupProps): JSX.Element {
   const [selectedIndex, setSelectedIndex] = useState<number>(FIRST_ELEMENT)
 
@@ -29,7 +29,7 @@ export function ButtonGroup({
       {/* <div
         className={`flex ${direction === 'row' ? 'h-10 flex-row' : 'flex-col'} ${isTabGroup ? 'gap-1 rounded-lg border bg-white p-1' : 'gap-2'}`}
       > */}
-      <div className={'flex flex-row h-8 gap-2 max-w-content'}>
+      <div className={'max-w-content flex h-8 flex-row gap-2'}>
         {buttons.map((button, index) => {
           const isSelected = selectedIndex === index
           return (

@@ -6,6 +6,7 @@ export enum EventDuration {
 }
 
 export interface User {
+  readonly id: number
   readonly username: string
   readonly email: string
   readonly password: string
@@ -16,10 +17,11 @@ export interface User {
 }
 
 export interface NewChatUser {
-  id: number;
-  pictureURL: string;
-  name: string;
-} 
+  id: number
+  pictureURL: string
+  name: string
+}
+
 export type GroupOrEvent = 'Group' | 'Event'
 
 export interface Group {
@@ -32,6 +34,13 @@ export interface Group {
   readonly type: GroupOrEvent
 }
 
+export interface Comment {
+  readonly id: number
+  readonly content: string
+  readonly creator: User
+  readonly createdAt: Date
+}
+
 // TODO: add more fields to each post like likes, comments etc.
 export interface GroupPost {
   readonly id: number
@@ -39,6 +48,9 @@ export interface GroupPost {
   readonly content: string
   readonly imageUrl?: string
   readonly createdAt: Date
+  readonly creator: User
+  readonly likeCount: number
+  readonly comments: readonly Comment[]
 }
 
 export interface Event {

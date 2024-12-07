@@ -40,7 +40,7 @@ export function DiscoverPage(): JSX.Element {
         <Heading headingText='Discover' />
         <AddButton onClick={() => {}} />
       </div>
-      
+
       <InputField
         type='text'
         label={`Search ${filterItem}s`}
@@ -51,7 +51,6 @@ export function DiscoverPage(): JSX.Element {
         onChange={(e) => setSearchTerm(e.target.value)}
       />
       <ButtonGroup
-        label='Filter by'
         isTabGroup={true}
         buttons={[
           {
@@ -70,13 +69,18 @@ export function DiscoverPage(): JSX.Element {
           }
         ]}
       />
-      {filteredDataBySearchTerm.map((item) => {
-        return filterItem === 'Group' ? (
-          <GroupOverviewCard group={item as Group} key={item.id} />
-        ) : (
-          <EventOverviewCard event={item as Event} key={item.id} />
-        )
-      })}
+
+      {filteredDataBySearchTerm.length > 0 ? (
+        filteredDataBySearchTerm.map((item) => {
+          return filterItem === 'Group' ? (
+            <GroupOverviewCard group={item as Group} key={item.id} />
+          ) : (
+            <EventOverviewCard event={item as Event} key={item.id} />
+          )
+        })
+      ) : (
+        <p className='text-gray-500'>No {filterItem}s found</p>
+      )}
     </div>
   )
 }
