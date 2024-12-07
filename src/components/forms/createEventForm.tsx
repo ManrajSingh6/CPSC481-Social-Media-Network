@@ -108,7 +108,6 @@ export function CreateEventForm({
           />
         }
       />
-
       <Button
         variant='primary'
         text='Create Event'

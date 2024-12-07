@@ -1,5 +1,5 @@
 import { Navigate, useNavigate, useParams } from 'react-router-dom'
-import { DISCOVER_ROUTE } from '../../utils/routes'
+import { DISCOVER_ROUTE, LOGIN_ROUTE } from '../../utils/routes'
 import { MOCK_GROUPS } from '../../utils/mockData'
 import { Heading } from '../../components/common/heading'
 import { AddButton } from '../../components/common/addButton'
@@ -7,14 +7,21 @@ import { LabelValueItem } from '../../components/common/labelValueItem'
 import { PostOverviewCard } from '../../components/groups/postOverviewCard'
 import { ArrowLeft } from 'lucide-react'
 import { Button } from '../../components/common/button'
+import { useState } from 'react'
+import { CreatePostModal } from '@/components/modals/createPostModal'
+import { useUser } from '@/context/userContext'
+import { GroupPost } from '@/utils/types'
 
 type SpecificGroupParams = {
   readonly groupId: string
 }
 
 export function SpecificGroupPage(): JSX.Element {
+  const { user } = useUser()
   const navigate = useNavigate()
   const { groupId } = useParams<SpecificGroupParams>()
+
+  const [createPostModalOpen, setCreatePostModalOpen] = useState(false)
 
   if (!groupId) {
     return <Navigate to={DISCOVER_ROUTE} />
@@ -27,8 +34,26 @@ export function SpecificGroupPage(): JSX.Element {
     return <Navigate to={DISCOVER_ROUTE} />
   }
 
+  if (!user) {
+    return <Navigate to={LOGIN_ROUTE} />
+  }
+
+  const [mockPosts, setMockPosts] = useState(groupInformation.posts)
+
+  function onPostSubmit(newPost: GroupPost): void {
+    setMockPosts((prev) => [...prev, newPost])
+    setCreatePostModalOpen(false)
+  }
+
   return (
     <div className='flex flex-col gap-4'>
+      <CreatePostModal
+        isOpen={createPostModalOpen}
+        onClose={() => setCreatePostModalOpen(false)}
+        parentGroupName={groupInformation.name}
+        user={user}
+        onPostSubmit={onPostSubmit}
+      />
       <div className='mb-2'>
         <Button
           variant='secondary'
@@ -39,7 +64,7 @@ export function SpecificGroupPage(): JSX.Element {
       </div>
       <div className='flex items-center justify-between'>
         <Heading headingText={groupInformation.name} />
-        <AddButton onClick={() => {}} />
+        <AddButton onClick={() => setCreatePostModalOpen(true)} />
       </div>
       <LabelValueItem
         label='Created By'
@@ -54,15 +79,19 @@ export function SpecificGroupPage(): JSX.Element {
         label='Posts'
         value={
           <div className='space-y-4'>
-            {groupInformation.posts.map((post) => {
-              return (
-                <PostOverviewCard
-                  key={post.id}
-                  post={post}
-                  groupId={groupInformation.id}
-                />
-              )
-            })}
+            {mockPosts.length > 1 ? (
+              mockPosts.map((post) => {
+                return (
+                  <PostOverviewCard
+                    key={post.id}
+                    post={post}
+                    groupId={groupInformation.id}
+                  />
+                )
+              })
+            ) : (
+              <p className='text-gray-500'>No posts found</p>
+            )}
           </div>
         }
       />
