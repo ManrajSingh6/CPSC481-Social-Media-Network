@@ -1,5 +1,5 @@
 import './assets/styles.css'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import { Navigate } from 'react-router-dom'
 import LoginPage from './pages/auth/LoginPage.tsx'
 import RegisterPage from './pages/auth/RegisterPage.tsx'
@@ -83,7 +83,6 @@ function App() {
                   element={<NotificationSettingsPage />}
                 />
                 <Route path={PROFILE_ROUTE} element={<ProfilePage />} />
-
                 <Route path={FAQ_ROUTE} element={<FAQPage />} />
                 <Route
                   path={PRIVACY_SAFETY_ROUTE}
