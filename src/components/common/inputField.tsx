@@ -14,6 +14,7 @@ interface InputFieldProps<T extends string | number> {
   readonly maxNumber?: number
   readonly minNumber?: number
   readonly step?: string
+  readonly width?: string
 }
 
 export function InputField<T extends string | number>({
@@ -31,10 +32,11 @@ export function InputField<T extends string | number>({
   maxLengthChars,
   minNumber,
   maxNumber,
-  step
+  step,
+  width
 }: InputFieldProps<T>): JSX.Element {
   return (
-    <div className='flex flex-col'>
+    <div className={`flex flex-col ${width}`}>
       {label && <label className='text-header mb-0.5 text-sm'>{label}</label>}
       <div className='flex items-center'>
         {icon && <p className='absolute pl-2'>{icon}</p>}

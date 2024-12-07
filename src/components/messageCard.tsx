@@ -10,13 +10,15 @@ interface MessageCardProps {
 export default function MessageCard({
   directMessage
 }: MessageCardProps): JSX.Element {
-  
-  const navigate = useNavigate();
-  function handleClick(){
-    navigate('/chat/' + directMessage.id);
+  const navigate = useNavigate()
+  function handleClick() {
+    navigate('/chat/' + directMessage.id)
   }
   return (
-    <div className='mb-2 flex cursor-pointer flex-row rounded-lg border bg-white p-2' onClick={handleClick}>
+    <div
+      className='mb-2 flex cursor-pointer flex-row rounded-lg border bg-white p-2'
+      onClick={handleClick}
+    >
       <div className='mr-4'>
         <CustomImage
           src={directMessage.pictureURL}

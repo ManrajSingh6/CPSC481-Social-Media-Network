@@ -51,9 +51,7 @@ export function EventOverviewCard({
       <div className='flex justify-end'>
         <Button
           text={RSVP ? 'Cancel RSVP' : 'RSVP'}
-          onClick={() =>
-            RSVP ? handleCancelRSVP() : handleRSVP()
-          }
+          onClick={() => (RSVP ? handleCancelRSVP() : handleRSVP())}
           paddingValue='px-4 py-2'
           variant={RSVP ? 'secondary' : 'primary'}
         />
