@@ -52,7 +52,7 @@ export default function ChatPage() {
   }, [])
 
   return (
-    <div className='flex h-[90%] flex-col rounded-lg border bg-white p-2'>
+    <div className='bg-white h-full flex flex-col rounded-lg border p-2'>
       {/* Heading Section */}
       <div className='mb-4 border-b pb-2'>
         <Heading headingText={chat?.friend_name || newUser?.name || ''} />
