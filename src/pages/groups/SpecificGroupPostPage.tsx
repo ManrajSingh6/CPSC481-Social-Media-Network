@@ -86,7 +86,7 @@ export function SpecificGroupPostPage(): JSX.Element {
           <CustomImage
             src={postInformation.imageUrl}
             alt='post-image'
-            className='w-[40%] self-center rounded-lg'
+            className='max-h-[200px] self-center rounded-lg'
           />
         </div>
       )}

@@ -34,6 +34,8 @@ export function EventOverviewCard({
     setRSVP(false)
   }
 
+  const rsvpCount = RSVP ? event.rsvpCount + 1 : event.rsvpCount
+
   return (
     <div className='rounded-lg border border-blue-400 bg-white p-2 transition-all'>
       <div
@@ -52,6 +54,7 @@ export function EventOverviewCard({
         <LabelValueItem label='Where' value={event.location} />
         <LabelValueItem label='When' value={event.date.toDateString()} />
         <LabelValueItem label='Duration' value={event.duration} />
+        <LabelValueItem label='RSVP Count' value={rsvpCount.toString()} />
       </ul>
       <div className='flex justify-end'>
         <Button

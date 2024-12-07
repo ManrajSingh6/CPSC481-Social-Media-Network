@@ -67,12 +67,12 @@ export function SpecificGroupPage(): JSX.Element {
         <AddButton onClick={() => setCreatePostModalOpen(true)} />
       </div>
       <LabelValueItem
-        label='Created By'
-        value={`${groupInformation.creator.fullName} (${groupInformation.creator.username})`}
-      />
-      <LabelValueItem
         label='Group Description'
         value={groupInformation.description}
+      />
+      <LabelValueItem
+        label='Created By'
+        value={`${groupInformation.creator.fullName} (${groupInformation.creator.username})`}
       />
       <LabelValueItem
         className='mt-2'

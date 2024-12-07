@@ -64,6 +64,7 @@ export interface Event {
   readonly likeCount: number
   readonly imageUrl?: string
   readonly comments: readonly Comment[]
+  readonly rsvpCount: number
 }
 
 export interface DirectMessage {

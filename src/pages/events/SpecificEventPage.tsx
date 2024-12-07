@@ -66,6 +66,10 @@ export function SpecificEventPage(): JSX.Element {
     setCommentInput('')
   }
 
+  const rsvpCount = RSVP
+    ? eventInformation.rsvpCount + 1
+    : eventInformation.rsvpCount
+
   return (
     <div className='flex flex-col gap-2'>
       <div className='mb-2 flex items-center justify-between'>
@@ -93,7 +97,7 @@ export function SpecificEventPage(): JSX.Element {
           <CustomImage
             src={eventInformation.imageUrl}
             alt='event-post-image'
-            className='w-[40%] self-center rounded-lg'
+            className='max-h-[200px] self-center rounded-lg'
           />
         </div>
       )}
@@ -115,7 +119,10 @@ export function SpecificEventPage(): JSX.Element {
           />
           <LabelValueItem label='Duration' value={eventInformation.duration} />
         </ul>
-        <LabelValueItem label='Likes' value={likeCount.toString()} />
+        <div className='flex items-center gap-4'>
+          <LabelValueItem label='Likes' value={likeCount.toString()} />
+          <LabelValueItem label='RSVP Count' value={rsvpCount.toString()} />
+        </div>
       </div>
       <div className='flex items-center justify-between'>
         <LikeDislikeButtonSet

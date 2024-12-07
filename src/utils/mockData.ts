@@ -358,7 +358,8 @@ export const MOCK_EVENTS: Event[] = [
         creator: MOCK_USERS[7],
         createdAt: new Date(Date.now() - 3 * 60 * 60 * 1000) // 3 hours ago
       }
-    ]
+    ],
+    rsvpCount: 8
   },
   {
     id: 2,
@@ -386,7 +387,8 @@ export const MOCK_EVENTS: Event[] = [
         creator: MOCK_USERS[6],
         createdAt: new Date(Date.now() - 2 * 60 * 60 * 1000) // 2 hours ago
       }
-    ]
+    ],
+    rsvpCount: 24
   },
   {
     id: 3,
@@ -414,7 +416,8 @@ export const MOCK_EVENTS: Event[] = [
         creator: MOCK_USERS[0],
         createdAt: new Date(Date.now() - 1 * 60 * 60 * 1000) // 1 hour ago
       }
-    ]
+    ],
+    rsvpCount: 12
   }
 ]
 
