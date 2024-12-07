@@ -23,7 +23,8 @@ import {
   ABOUT_US_ROUTE,
   SPECIFIC_GROUP_ROUTE,
   SPECIFIC_GROUP_POST_ROUTE,
-  EVENT_ROUTE
+  EVENT_ROUTE,
+  PARTICIPANTS_ROUTE
 } from './utils/routes'
 import { ProtectedRoute } from './components/protectedRoute.tsx'
 import { DiscoverPage } from './pages/DiscoverPage.tsx'
@@ -44,7 +45,8 @@ import ChatPage from './pages/messages/ChatPage.tsx'
 import NewChatPage from './pages/messages/NewChatPage.tsx'
 import { SpecificGroupPage } from './pages/groups/SpecificGroupPage.tsx'
 import { SpecificGroupPostPage } from './pages/groups/SpecificGroupPostPage.tsx'
-import EventPage from './pages/EventPage.tsx'
+import {EventPage} from './pages/events/EventPage.tsx'
+import {ParticipantsPage} from './pages/events/ParticipantsPage.tsx'
 
 function App() {
   return (
@@ -91,7 +93,8 @@ function App() {
                   element={<PrivacySafetyPage />}
                 />
                 <Route path={APP_UPDATES_ROUTE} element={<AppUpdatesPage />} />
-                <Route path={EVENT_ROUTE} element={<EventPage/>}/>
+                <Route path={EVENT_ROUTE} element={<EventPage />}/>
+                <Route path={PARTICIPANTS_ROUTE} element={<ParticipantsPage/>}/>
               </Route>
             </Route>
           </Routes>

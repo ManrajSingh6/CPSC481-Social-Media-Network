@@ -29,7 +29,10 @@ export function Button({
   return (
     <button
       className={`flex items-center justify-center gap-2 ${roundedValue} ${paddingValue} text-sm shadow-sm transition-all duration-300 ease-in-out ${variantStyles} ${customStyle}`}
-      onClick={onClick}
+      onClick={(e) => {
+        e.stopPropagation()
+        onClick()
+      }}
       disabled={disabled}
     >
       {icon && <span className='text-sm'>{icon}</span>}

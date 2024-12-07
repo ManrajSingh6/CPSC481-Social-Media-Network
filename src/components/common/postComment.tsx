@@ -34,9 +34,9 @@ export function PostComment({
             }`}
           >
             <p>{isSelfComment ? 'You' : comment.creator.username}</p>
-            <p className='text-sm font-normal text-gray-500'>{`${hoursAgo}h`}</p>
+            <p className='text-sm font-normal text-gray-500 break-words whitespace-normal'>{`${hoursAgo}h`}</p>
           </div>
-          <p className='text-sm text-gray-600'>{comment.content}</p>
+          <p className='text-sm text-gray-600 break-words whitespace-normal'>{comment.content}</p>
         </div>
       </div>
     </div>

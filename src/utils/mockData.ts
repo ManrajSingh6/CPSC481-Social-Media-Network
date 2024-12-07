@@ -51,7 +51,7 @@ export const MOCK_USERS: User[] = [
     enrolledEventIds: [1, 3]
   },
   {
-    id: 4,
+    id: 5,
     username: 'dwang',
     email: 'dwang@mail.com',
     password: 'dwang',
@@ -61,7 +61,7 @@ export const MOCK_USERS: User[] = [
     enrolledEventIds: [2]
   },
   {
-    id: 5,
+    id: 6,
     username: 'egarcia',
     email: 'egarcia@mail.com',
     password: 'egarcia',
@@ -71,7 +71,7 @@ export const MOCK_USERS: User[] = [
     enrolledEventIds: [1, 2, 3]
   },
   {
-    id: 6,
+    id: 7,
     username: 'fwhite',
     email: 'fwhite@mail.com',
     password: 'fwhite',
@@ -81,7 +81,7 @@ export const MOCK_USERS: User[] = [
     enrolledEventIds: [1]
   },
   {
-    id: 7,
+    id: 8,
     username: 'gmartin',
     email: 'gmartin@mail.com',
     password: 'gmartin',
@@ -91,7 +91,7 @@ export const MOCK_USERS: User[] = [
     enrolledEventIds: [2, 3]
   },
   {
-    id: 8,
+    id: 9,
     username: 'hclark',
     email: 'hclark@mail.com',
     password: 'hclark',
@@ -101,7 +101,7 @@ export const MOCK_USERS: User[] = [
     enrolledEventIds: [1, 3]
   },
   {
-    id: 9,
+    id: 10,
     username: 'imiller',
     email: 'imiller@mail.com',
     password: 'imiller',
@@ -111,7 +111,7 @@ export const MOCK_USERS: User[] = [
     enrolledEventIds: [2]
   },
   {
-    id: 10,
+    id: 11,
     username: 'jkhan',
     email: 'jkhan@mail.com',
     password: 'jkhan',
@@ -339,8 +339,11 @@ export const MOCK_EVENTS: Event[] = [
     location: 'Community Hall',
     date: new Date('2024-12-01T10:00:00Z'),
     duration: EventDuration.TwoHours,
-    creator: MOCK_USER,
-    type: 'Event'
+    creator: MOCK_USERS[3],
+    type: 'Event',
+    likeCount: 10,
+    comments: [],
+    rsvp: [MOCK_USERS[1],MOCK_USERS[2],MOCK_USERS[3],MOCK_USERS[4],MOCK_USERS[5] ,MOCK_USERS[6]]
   },
   {
     id: 2,
@@ -350,8 +353,11 @@ export const MOCK_EVENTS: Event[] = [
     location: 'Central Park',
     date: new Date('2024-12-05T15:00:00Z'),
     duration: EventDuration.Hour,
-    creator: MOCK_USER,
-    type: 'Event'
+    creator: MOCK_USERS[3],
+    type: 'Event',
+    likeCount: 8,
+    comments: [],
+    rsvp:[]
   },
   {
     id: 3,
@@ -361,8 +367,11 @@ export const MOCK_EVENTS: Event[] = [
     location: 'Downtown Gym',
     date: new Date('2024-12-10T08:00:00Z'),
     duration: EventDuration.Day,
-    creator: MOCK_USER,
-    type: 'Event'
+    creator: MOCK_USERS[3],
+    type: 'Event',
+    likeCount: 19,
+    comments: [],
+    rsvp:[MOCK_USERS[1],MOCK_USERS[2],MOCK_USERS[3],MOCK_USERS[4],MOCK_USERS[5] ,MOCK_USERS[6]]
   }
 ]
 

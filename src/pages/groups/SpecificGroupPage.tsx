@@ -15,6 +15,7 @@ type SpecificGroupParams = {
 export function SpecificGroupPage(): JSX.Element {
   const navigate = useNavigate()
   const { groupId } = useParams<SpecificGroupParams>()
+  console.log(groupId);
 
   if (!groupId) {
     return <Navigate to={DISCOVER_ROUTE} />

@@ -39,6 +39,14 @@ export interface Comment {
   readonly content: string
   readonly creator: User
   readonly createdAt: Date
+  readonly replies?: Reply
+}
+
+export interface Reply{
+  readonly id: number
+  readonly content: String
+  readonly creator: User
+  readonly createdAt: Date
 }
 
 // TODO: add more fields to each post like likes, comments etc.
@@ -62,6 +70,9 @@ export interface Event {
   readonly duration: EventDuration
   readonly creator: User
   readonly type: GroupOrEvent
+  readonly likeCount: number
+  readonly comments: readonly Comment[]
+  readonly rsvp: User[]
 }
 
 export interface DirectMessage {
