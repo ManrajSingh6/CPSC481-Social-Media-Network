@@ -20,7 +20,8 @@ import {
   NOTIFCATON_SETTINGS_ROUTE,
   CHAT_ROUTE,
   NEW_CHAT_ROUTE,
-  ABOUT_US_ROUTE
+  ABOUT_US_ROUTE,
+  EVENT_ROUTE
 } from './utils/routes'
 import { ProtectedRoute } from './components/protectedRoute.tsx'
 import { DiscoverPage } from './pages/DiscoverPage.tsx'
@@ -39,6 +40,7 @@ import { AppUpdatesPage } from './pages/settings/AppUpdatesPage.tsx'
 import { NotificationSettingsPage } from './pages/NotificationSettingsPage.tsx'
 import ChatPage from './pages/messages/ChatPage.tsx'
 import NewChatPage from './pages/messages/NewChatPage.tsx'
+import EventPage from './pages/EventPage.tsx'
 
 function App() {
   return (
@@ -75,6 +77,7 @@ function App() {
                   element={<PrivacySafetyPage />}
                 />
                 <Route path={APP_UPDATES_ROUTE} element={<AppUpdatesPage />} />
+                <Route path={EVENT_ROUTE} element={<EventPage/>}/>
               </Route>
             </Route>
           </Routes>
