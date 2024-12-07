@@ -72,7 +72,8 @@ export function CreateGroupEventModal({
       type: 'Event',
       likeCount: 0,
       imageUrl: createEventFormData.imageUrl,
-      comments: []
+      comments: [],
+      rsvpCount: 0
     }
 
     onEventSubmit(newEvent)
