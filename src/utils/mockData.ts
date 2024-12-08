@@ -17,7 +17,7 @@ export const MOCK_USERS: User[] = [
     password: 'jdoe',
     fullName: 'John Doe',
     profilePicUrl: 'https://avatar.iran.liara.run/public/5',
-    enrolledGroupIds: [2, 3],
+    enrolledGroupIds: [3, 4],
     enrolledEventIds: [3]
   },
   {
