@@ -327,6 +327,71 @@ export const MOCK_GROUPS: Group[] = [
     ],
     createdAt: new Date('2024-11-08T11:30:00Z'),
     type: 'Group'
+  },
+  {
+    id: 4,
+    name: 'Photography',
+    description:
+      'A group for photography enthusiasts to share tips, showcase their work, and discuss gear. Whether you’re a beginner or a pro, join us to capture and celebrate the art of photography!',
+    creator: MOCK_USERS[2],
+    posts: [
+      {
+        id: 1,
+        title: 'The Basics of Night Photography',
+        content:
+          'Master the art of night photography with these essential tips and techniques.',
+        createdAt: new Date('2024-11-18T20:00:00Z'),
+        imageUrl:
+          'https://images.squarespace-cdn.com/content/v1/63ceaffd33529a45e572bf90/eea55765-ce6b-45a8-b980-b564275c3508/Mikko-Lagerstedt-Night-Of-Fog.jpg',
+        creator: MOCK_USERS[5],
+        likeCount: 12,
+        comments: [
+          {
+            id: 1,
+            content:
+              'This guide is awesome! I’ve always struggled with capturing stars clearly.',
+            creator: MOCK_USERS[4],
+            createdAt: new Date(Date.now() - 5 * 60 * 60 * 1000) // 5 hours ago
+          },
+          {
+            id: 2,
+            content:
+              'Any suggestions for affordable tripods for night photography?',
+            creator: MOCK_USERS[6],
+            createdAt: new Date(Date.now() - 8 * 60 * 60 * 1000) // 8 hours ago
+          }
+        ]
+      },
+      {
+        id: 2,
+        title: 'Top 10 Lenses for Photography',
+        content:
+          'Explore the best lenses to take your landscape photography to the next level.',
+        createdAt: new Date('2024-11-19T15:30:00Z'),
+        imageUrl:
+          'https://photographyproject.uk/wp-content/uploads/2022/04/28-1337-post/camera-lens.jpg',
+        creator: MOCK_USERS[3],
+        likeCount: 20,
+        comments: [
+          {
+            id: 1,
+            content:
+              'Great recommendations! I’ve been thinking of upgrading my gear for landscapes.',
+            creator: MOCK_USERS[1],
+            createdAt: new Date(Date.now() - 3 * 60 * 60 * 1000) // 3 hours ago
+          },
+          {
+            id: 2,
+            content:
+              'Do you know if these lenses are compatible with mirrorless cameras?',
+            creator: MOCK_USERS[0],
+            createdAt: new Date(Date.now() - 7 * 60 * 60 * 1000) // 7 hours ago
+          }
+        ]
+      }
+    ],
+    createdAt: new Date('2024-11-10T14:00:00Z'),
+    type: 'Group'
   }
 ]
 
